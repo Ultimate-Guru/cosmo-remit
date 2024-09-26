@@ -1,0 +1,45 @@
+  // const [formData, setFormData] = useState({
+  //   firstName: "",
+  //   lastName: "",
+  //   country: "",
+  //   phoneNumber: "",
+  //   email: "",
+  //   password: "",
+  //   confirmPassword: "",
+  // });
+
+  // const [errors, setErrors] = useState({});
+
+  // const validate = () => {
+  //   const newErrors = {};
+
+  //   if (!formData.firstName) newErrors.firstName = "First name is required";
+  //   if (!formData.lastName) newErrors.lastName = "Last name is required";
+  //   if (!formData.country)
+  //     newErrors.country = "Country of residence is required";
+  //   if (!formData.phoneNumber) newErrors.phoneNumber = "Phone number is required";
+  //   if (!formData.email) newErrors.email = "Email is required";
+  //   else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Email is invalid";
+  //   if (!formData.password) newErrors.password = "Password is required";
+  //   if (formData.password !== formData.confirmPassword) newErrors.confirmPassword = "Passwords do not match";
+
+  //   return newErrors;
+  // };
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const validationErrors = validate();
+  //   setErrors(validationErrors);
+
+  //   if (Object.keys(validationErrors).length === 0) {
+  //     // Submit form or handle successful validation
+  //     console.log("Form submitted:", formData);
+  //   } else {
+  //     console.log("Validation failed");
+  //   }
+  // };
+
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData((prevData) => ({ ...prevData, [name]: value }));
+  // };
