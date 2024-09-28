@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
-import bgImage from "../assets/img/money.jpg";
+import { NavLink } from "react-router-dom";
+import bgImage from '../assets/img/Vector.png';
+import Logo from "../assets/img/Favicon.png";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -45,33 +47,32 @@ const SignUp = () => {
   };
 
   // Handle form submission
-const handleSubmit = (e) => {
-  e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const validationErrors = validate();
-  setErrors(validationErrors);
+    const validationErrors = validate();
+    setErrors(validationErrors);
 
-  // If no validation errors, form is ready to be submitted
-  if (Object.keys(validationErrors).length === 0) {
-    window.alert(
-      `Form Submitted Successfully!\n\nData:\nFirst Name: ${formData.FirstName}\nLast Name: ${formData.LastName}\nEmail: ${formData.Email}\nPhone Number: ${formData.PhoneNumber}\nCountry: ${formData.Country}`
-    );
-    // Add your form submission logic here (e.g., API call)
-  } else {
-    window.alert("Validation Failed! Please correct the errors and try again.");
-  }
+    // If no validation errors, form is ready to be submitted
+    if (Object.keys(validationErrors).length === 0) {
+      window.alert(
+        `Form Submitted Successfully!\n\nData:\nFirst Name: ${formData.FirstName}\nLast Name: ${formData.LastName}\nEmail: ${formData.Email}\nPhone Number: ${formData.PhoneNumber}\nCountry: ${formData.Country}`
+      );
+    } else {
+      window.alert("Validation Failed! Please correct the errors and try again.");
+    }
 
-  // Reset form data after submission  
-  setFormData({
-    FirstName: '',
-    LastName: '',
-    Email: '',
-    PhoneNumber: '',
-    Password: '',
-    ConfirmPassword: '',
-    Country: ''
-  })
-};
+    // Reset form data after submission  
+    setFormData({
+      FirstName: '',
+      LastName: '',
+      Email: '',
+      PhoneNumber: '',
+      Password: '',
+      ConfirmPassword: '',
+      Country: ''
+    })
+  };
 
   // Handle form input changes
   const handleChange = (e) => {
@@ -83,52 +84,54 @@ const handleSubmit = (e) => {
   };
 
   return (
-    <div className="flex h-screen">
-      <div className="w-4/12 bg-gray-800 text-white flex flex-col justify-center items-center p-10">
-        <h1 className="text-xl font-bold">The fastest way to</h1>
-        <h2 className="text-2xl font-bold mb-52 text-red-600">send money abroad</h2>
-        <img
-          src="https://cosmoremit.com.au/assets/images/logo/logo.png"
-          alt="CosmoLogo"
-          className="w-48 mb-44"
-        />
+    <div className="flex flex-col md:flex-row h-screen">
+      {/* Image container with text and logo */}
+      <div className="relative w-full md:w-4/12 h-2/5 md:h-full">
+        <img src={bgImage} alt="BgImage" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-[rgba(0,0,0,0.54)]"></div>
+        <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+          <h1 className="text-lg font-bold text-white">The fastest way to</h1>
+          <h2 className="text-xl font-extrabold text-red-600">send money abroad</h2>
+          <img src={Logo} alt="CosmoLogo" className="w-24 md:w-50 ml-10 md:mt-32" />
+        </div>
       </div>
 
-      <div className="ml-16 w-1/2 bg-white p-10">
+      {/* Form beside the image */}
+      <div className="w-full md:w-1/2 bg-white p-4 md:p-10 ml-14">
         {/* Signup steps */}
         <div className="flex justify-between flex-row mb-7">
-          <div className="flex cursor-pointer gap-3">
-            <h1 className="bg-red-500 text-white font-bold text-xl px-3 rounded">1</h1>
-            <span className="font-bold">Sign Up</span>
+          <div className="flex cursor-pointer gap-2 md:gap-3">
+            <h1 className="bg-red-500 text-white font-bold text-sm md:text-xl px-2 md:px-3 rounded">1</h1>
+            <span className="font-bold text-sm md:text-base">Sign Up</span>
           </div>
-          <div className="flex cursor-pointer gap-3">
-            <h1 className="bg-gray-400 text-white font-bold text-xl px-3 rounded">2</h1>
-            <span className="font-bold text-gray-400">Verify Email</span>
+          <div className="flex cursor-pointer gap-2 md:gap-3">
+            <h1 className="bg-gray-400 text-white font-bold text-sm md:text-xl px-2 md:px-3 rounded">2</h1>
+            <span className="font-bold text-sm md:text-base text-gray-400">Verify Email</span>
           </div>
-          <div className="flex cursor-pointer gap-3">
-            <h1 className="bg-gray-400 text-white font-bold text-xl px-3 rounded">3</h1>
-            <span className="font-bold text-gray-400">Upload Credentials</span>
+          <div className="flex cursor-pointer gap-2 md:gap-3">
+            <h1 className="bg-gray-400 text-white font-bold text-sm md:text-xl px-2 md:px-3 rounded">3</h1>
+            <span className="font-bold text-sm md:text-base text-gray-400">Upload Credentials</span>
           </div>
         </div>
         <hr className="h-7 text-gray-500 font-medium" />
 
         {/* Sign up form */}
-        <div className="text-center">
-          <h3 className="font-bold mb-4 text-2xl">Sign up</h3>
-          <p className="text-gray-400 mb-6 font-medium text-xs">
+        <div className="text-center ml-10">
+          <h3 className="font-bold mb-2 md:mb-4 text-lg md:text-2xl">Sign up</h3>
+          <p className="text-gray-400 mb-4 md:mb-6 font-medium text-xs">
             Please fill in your name as it appears on your official documents
             and government IDs.
             <p>Already have an account?{" "}
               <span>
-                <a href="#" className="text-red-600 font-medium">Log in here</a>
+                <NavLink to={'/SignIn'} className="text-red-600 font-medium">Log in here</NavLink>
               </span>
             </p>
           </p>
         </div>
 
-        <form className="flex justify-between m-1" onSubmit={handleSubmit}>
+        <form className="flex flex-col md:flex-row justify-between ml-1" onSubmit={handleSubmit}>
           {/* Left column inputs */}
-          <div>
+          <div className="mb-4 md:mb-0">
             <label className="text-sm text-gray-500 font-medium">First name</label>
             <div className="mb-4">
               <input
@@ -136,10 +139,10 @@ const handleSubmit = (e) => {
                 name="FirstName"
                 value={formData.FirstName}
                 onChange={handleChange}
-                className="bg-gray-100 rounded h-8 p-2 w-64 outline-none"
+                className="bg-gray-100 rounded h-8 p-2 w-full md:w-64 outline-none"
                 required
               />
-              <p className="text-red-500 text-xs">{errors.FirstName}</p>
+              <p className="text-red-500 text-xs font-medium">{errors.FirstName}</p>
             </div>
 
             <label className="text-gray-500 font-medium text-sm">Country of residence</label>
@@ -149,10 +152,10 @@ const handleSubmit = (e) => {
                 name="Country"
                 value={formData.Country}
                 onChange={handleChange}
-                className="border rounded bg-gray-100 h-8 p-2 w-64 outline-none"
+                className="border rounded bg-gray-100 h-8 p-2 w-full md:w-64 outline-none"
                 required
               />
-              <p className="text-red-500 text-xs">{errors.Country}</p>
+              <p className="text-red-500 text-xs font-medium">{errors.Country}</p>
             </div>
 
             <label className="text-gray-500 font-medium text-sm">Phone number</label>
@@ -162,10 +165,10 @@ const handleSubmit = (e) => {
                 name="PhoneNumber"
                 value={formData.PhoneNumber}
                 onChange={handleChange}
-                className="border rounded bg-gray-100 h-8 p-2 w-64 outline-none"
+                className="border rounded bg-gray-100 h-8 p-2 w-full md:w-64 outline-none"
                 required
               />
-              <p className="text-red-500 text-xs">{errors.PhoneNumber}</p>
+              <p className="text-red-500 text-xs font-medium">{errors.PhoneNumber}</p>
             </div>
 
             <label className="text-gray-500 font-medium text-sm">Confirm Password</label>
@@ -175,15 +178,15 @@ const handleSubmit = (e) => {
                 name="ConfirmPassword"
                 value={formData.ConfirmPassword}
                 onChange={handleChange}
-                className="border rounded bg-gray-100 h-8 p-2 w-64 outline-none"
+                className="border rounded bg-gray-100 h-8 p-2 w-full md:w-64 outline-none"
                 required
               />
-              <p className="text-red-500 text-xs">{errors.ConfirmPassword}</p>
+              <p className="text-red-500 text-xs font-medium">{errors.ConfirmPassword}</p>
             </div>
           </div>
 
           {/* Right column inputs */}
-          <div className="ml-20">
+          <div className="mb-4 md:ml-20">
             <label className="text-gray-500 font-medium text-sm">Last name</label>
             <div className="mb-4">
               <input
@@ -191,10 +194,10 @@ const handleSubmit = (e) => {
                 name="LastName"
                 value={formData.LastName}
                 onChange={handleChange}
-                className="rounded border bg-gray-100 h-8 p-2 w-64 outline-none"
+                className="rounded border bg-gray-100 h-8 p-2 w-full md:w-64 outline-none"
                 required
               />
-              <p className="text-red-500 text-xs">{errors.LastName}</p>
+              <p className="text-red-500 text-xs font-medium">{errors.LastName}</p>
             </div>
 
             <label className="text-gray-500 font-medium text-sm">Email</label>
@@ -204,10 +207,10 @@ const handleSubmit = (e) => {
                 name="Email"
                 value={formData.Email}
                 onChange={handleChange}
-                className="rounded border bg-gray-100 h-8 p-2 w-64 outline-none"
+                className="rounded border bg-gray-100 h-8 p-2 w-full md:w-64 outline-none"
                 required
               />
-              <p className="text-red-500 text-xs">{errors.Email}</p>
+              <p className="text-red-500 text-xs font-medium">{errors.Email}</p>
             </div>
 
             <label className="text-gray-500 font-medium text-sm">Password</label>
@@ -217,33 +220,33 @@ const handleSubmit = (e) => {
                 name="Password"
                 value={formData.Password}
                 onChange={handleChange}
-                className="rounded bg-gray-100 h-8 p-2 w-64 outline-none"
+                className="rounded bg-gray-100 h-8 p-2 w-full md:w-64 outline-none"
                 required
               />
-              <p className="text-red-500 text-xs">{errors.Password}</p>
+              <p className="text-red-500 text-xs font-medium">{errors.Password}</p>
             </div>
           </div>
         </form>
 
-        {/* <div className="flex items-center justify-between mb-4">
-          <input type="checkbox" className="" required />
-          <label className="text-gray-600 mr-8 text-xs font-medium">I agree to the{" "}
-            <a href="#" className="text-red-600">terms & conditions</a>{" "}and{" "}
-            <a href="#" className="text-red-600">privacy policy</a>
-          </label>
-        </div> */}
-
-        {/* Submit button */}
-        <div className="flex justify-end mt-3 mr-2">
+        <div className="flex items-center ml-2">
+          <input type="checkbox" className="mr-1" />
+          <p className="font-medium text-sm">
+            I agree to the {""}
+            <a href="#" className="text-red-600 font-medium">terms</a> {""}
+            & {""}
+            <a href="#" className="text-red-600 font-medium">conditions</a>
+          </p>
           <button
-            className="bg-red-600 text-white w-28 py-2 rounded-md"
             type="submit"
-            onClick={handleSubmit}>
+            onClick={handleSubmit}
+            className="bg-red-600 text-white font-semibold rounded py-2 md:w-48 ml-28">
             Next
           </button>
         </div>
+
       </div>
     </div>
+
   );
 };
 
