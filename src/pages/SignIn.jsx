@@ -17,7 +17,7 @@ const SignIn = () => {
             <input  
               type="email"  
               name="email"   
-              className="rounded border bg-gray-100 h-8 p-2 w-64 outline-none"  
+              className="rounded border bg-gray-100 h-8 p-2 outline-none w-96"  
               required  
             />  
           </div>  
@@ -26,7 +26,7 @@ const SignIn = () => {
             <input  
               type="password"  
               name="password"   
-              className="rounded bg-gray-100 h-8 p-2 w-64 outline-none"  
+              className="rounded bg-gray-100 h-8 p-2 w-96 outline-none"  
               required  
             />  
           </div>  
