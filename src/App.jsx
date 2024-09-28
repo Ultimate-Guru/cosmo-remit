@@ -13,8 +13,8 @@ const App = () => {
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/SignUp" element={<SignUp />} />
       </Routes>
-      {/* <VerifyEmail /> */}
-      {/* <Upload /> */}
+      <VerifyEmail />
+      <Upload />
     </div>
   );
 };
