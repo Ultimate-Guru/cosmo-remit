@@ -13,12 +13,12 @@ import Confirm from "./pages/Confirm";
 const App = () => {
   return (
     <div>
-      {/* <Routes>
+      <Routes>
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/SignUp" element={<SignUp />} />
       </Routes>
       <VerifyEmail />
-      <Upload /> */}
+      <Upload />
       <Passport />
       <Resident />
       <Transact />
