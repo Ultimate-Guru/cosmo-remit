@@ -8,6 +8,7 @@ import Upload from "./pages/Upload";
 import Passport from "./pages/Passport";
 import Resident from "./pages/Resident";
 import Transact from "./pages/Transact";
+import Confirm from "./pages/Confirm";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
       <Passport />
       <Resident />
       <Transact />
+      <Confirm />
     </div>
   );
 };
