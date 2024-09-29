@@ -7,6 +7,7 @@ import VerifyEmail from "./pages/VerifyEmail";
 import Upload from "./pages/Upload";
 import Passport from "./pages/Passport";
 import Resident from "./pages/Resident";
+import Transact from "./pages/Transact";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
       <Upload /> */}
       <Passport />
       <Resident />
+      <Transact />
     </div>
   );
 };
