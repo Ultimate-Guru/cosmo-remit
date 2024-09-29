@@ -1,17 +1,41 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import React, { useState, useRef } from 'react';
 import Upload from '../assets/img/Upload.png';
 import Circle from '../assets/img/black-Circle.png';
 
 const Passport = () => {
-  return (
-    <div className='flex flex-col items-center gap-12 py-8'>
-        <img src={Upload} className='w-7/12' />
-        <h1 className='font-bold text-2xl'>Take a passport photograph</h1>
-        <img src={Circle} />
-        <button type="submit" className="bg-red-600 text-white font-semibold rounded py-2 md:w-48">Next</button>
-    </div>
-  )
-}
+  const [selectedFile, setSelectedFile] = useState(null);
+  const fileInputRef = useRef(null);
 
-export default Passport
+  // Function to handle file input change
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setSelectedFile(URL.createObjectURL(file)); // Create URL for the uploaded image
+    }
+  };
+
+  // Function to trigger file input click when the circle is clicked
+  const handleCircleClick = () => {
+    fileInputRef.current.click();
+  };
+
+  return (
+    <div className='flex flex-col items-center gap-16 py-9'>
+      <img src={Upload} className='w-7/12' alt="Upload Icon" />
+      <h1 className='font-bold text-2xl'>Take a passport photograph</h1>
+
+      {/* Circle image as clickable */}
+      <div className="w-40 h-40 rounded-full overflow-hidden cursor-pointer" onClick={handleCircleClick}>
+        <img src={selectedFile || Circle} className="w-full h-full object-cover" alt="Passport or Placeholder"/>
+      </div>
+
+      {/* Hidden file input */}
+      <input type="file" accept="image/*" capture="user" onChange={handleFileChange} ref={fileInputRef} className="hidden"/>
+
+      <button type="submit" className="bg-red-600 text-white font-semibold rounded py-2 md:w-48">Next</button>
+    </div>
+  );
+};
+
+export default Passport;
