@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 
-const PinInput = () => {
+const Transact = () => {
   const [pin, setPin] = useState(["", "", "", ""]);
 
   // Handle input change
@@ -35,4 +35,4 @@ const PinInput = () => {
   );
 };
 
-export default PinInput;
+export default Transact;
