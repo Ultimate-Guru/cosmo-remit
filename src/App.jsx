@@ -20,6 +20,11 @@ import Passport from "./pages/Passport";
 import Resident from "./pages/Resident";
 import Transact from "./pages/Transact";
 import Confirm from "./pages/Confirm";
+import Success from "./dashboard/accountlimits/Success";
+import Review from "./dashboard/accountlimits/Review";
+import Funds from "./dashboard/accountlimits/Funds";
+import Residence from "./dashboard/accountlimits/Residence";
+import Limits from "./dashboard/accountlimits/Limits";
 
 const App = () => {
   return (
@@ -47,6 +52,12 @@ const App = () => {
       <Resident />
       <Transact />
       <Confirm />
+
+      <Limits />
+      <Residence />
+      <Funds />
+      <Review />
+      <Success />
     </div>
   );
 };
