@@ -1,14 +1,20 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { NavLink } from "react-router-dom";
+import BgImg from '../../assets/img/Rectangle 14.png';
 // import './Closer.css'
 
 function Closer() {
-    const BgCol = {
-        backgroundColor: 'rgb(51, 7, 4)'
-    }
+    const bgImage = {
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(${BgImg})`,
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        height: '50vh',
+        width: '100%'
+      };
     return(
-        <div style={BgCol} className="text-center p-16">
+        <div style={bgImage} className="text-center p-16">
             <h2 className="mb-6 text-white text-3xl font-bold text-center">We are closer than you think</h2>
             <p className="mt-2 text-white h-6 text-xs">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam accusamus nostrum distinctio <br /> expedita at numquam! Facilis, libero necessitatibus.
