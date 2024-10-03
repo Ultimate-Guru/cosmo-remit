@@ -25,6 +25,7 @@ import Review from "./dashboard/accountlimits/Review";
 import Funds from "./dashboard/accountlimits/Funds";
 import Residence from "./dashboard/accountlimits/Residence";
 import Limits from "./dashboard/accountlimits/Limits";
+import LimitForm from "./dashboard/accountlimits/LimitForm";
 
 const App = () => {
   return (
@@ -54,6 +55,7 @@ const App = () => {
       <Confirm />
 
       <Limits />
+      <LimitForm />
       <Residence />
       <Funds />
       <Review />
