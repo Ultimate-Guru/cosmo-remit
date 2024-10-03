@@ -1,5 +1,16 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
+import Navbar from "../src/components/Navbar/Navbar";
+import Hero from "./components/HeroSection/Hero";
+import Choose from "./components/WhyChooseUs/Choose";
+import Closer from "./components/CloserThanYouThink/Closer";
+import Works from "./components/HowItWorks/Works";
+import Countries from "./components/CountriesSection/Countries";
+import Distance from "./components/DistanceSection/Distance";
+import Fastest from "./components/FastestWaySection/Fastest";
+import Faq from "./components/NewsFAQ/Faq";
+import Apps from "./components/AppDownloadSection/Apps";
+import Footer from "./components/Subscribe/Footer";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import { Routes, Route } from "react-router-dom";
@@ -13,10 +24,23 @@ import Confirm from "./pages/Confirm";
 const App = () => {
   return (
     <div>
+      <Navbar />
+      <Hero />
+      <Choose />
+      <Closer />
+      <Works/>
+      <Countries />
+      <Distance />
+      <Fastest />
+      <Faq />
+      <Apps />
+      <Footer />
+
       <Routes>
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/SignUp" element={<SignUp />} />
       </Routes>
+
       <VerifyEmail />
       <Upload />
       <Passport />
