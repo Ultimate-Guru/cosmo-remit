@@ -30,7 +30,7 @@ import LimitForm from "./dashboard/accountlimits/LimitForm";
 const App = () => {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar />
       <Hero />
       <Choose />
       <Closer />
@@ -52,7 +52,7 @@ const App = () => {
       <Passport />
       <Resident />
       <Transact />
-      <Confirm />
+      <Confirm /> */}
 
       <Limits />
       <LimitForm />
