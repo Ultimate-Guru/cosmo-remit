@@ -1,10 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom"; // Import useNavigate
 import bgImage from '../assets/img/Vector.png';
 import Logo from "../assets/img/Favicon.png";
+import Nav1 from '../assets/img/nav1.png'
 
 const SignUp = () => {
+  const navigate = useNavigate(); // Initialize useNavigate
   const [formData, setFormData] = useState({
     FirstName: '',
     LastName: '',
@@ -58,6 +60,9 @@ const SignUp = () => {
       window.alert(
         `Form Submitted Successfully!\n\nData:\nFirst Name: ${formData.FirstName}\nLast Name: ${formData.LastName}\nEmail: ${formData.Email}\nPhone Number: ${formData.PhoneNumber}\nCountry: ${formData.Country}`
       );
+
+      // Navigate to the verification page after successful validation
+      navigate('/VerifyEmail');
     } else {
       window.alert("Validation Failed! Please correct the errors and try again.");
     }
@@ -71,7 +76,7 @@ const SignUp = () => {
       Password: '',
       ConfirmPassword: '',
       Country: ''
-    })
+    });
   };
 
   // Handle form input changes
@@ -100,20 +105,8 @@ const SignUp = () => {
       <div className="w-full md:w-1/2 bg-white p-4 md:p-10 ml-14">
         {/* Signup steps */}
         <div className="flex justify-between flex-row mb-7">
-          <div className="flex cursor-pointer gap-2 md:gap-3">
-            <h1 className="bg-red-500 text-white font-bold text-sm md:text-xl px-2 md:px-3 rounded">1</h1>
-            <span className="font-bold text-sm md:text-base">Sign Up</span>
-          </div>
-          <div className="flex cursor-pointer gap-2 md:gap-3">
-            <h1 className="bg-gray-400 text-white font-bold text-sm md:text-xl px-2 md:px-3 rounded">2</h1>
-            <span className="font-bold text-sm md:text-base text-gray-400">Verify Email</span>
-          </div>
-          <div className="flex cursor-pointer gap-2 md:gap-3">
-            <h1 className="bg-gray-400 text-white font-bold text-sm md:text-xl px-2 md:px-3 rounded">3</h1>
-            <span className="font-bold text-sm md:text-base text-gray-400">Upload Credentials</span>
-          </div>
+        <img src={Nav1} />
         </div>
-        <hr className="h-7 text-gray-500 font-medium" />
 
         {/* Sign up form */}
         <div className="text-center ml-10">
@@ -220,11 +213,12 @@ const SignUp = () => {
                 name="Password"
                 value={formData.Password}
                 onChange={handleChange}
-                className="rounded bg-gray-100 h-8 p-2 w-full md:w-64 outline-none"
+                className="rounded border bg-gray-100 h-8 p-2 w-full md:w-64 outline-none"
                 required
               />
               <p className="text-red-500 text-xs font-medium">{errors.Password}</p>
             </div>
+
           </div>
         </form>
 
@@ -239,14 +233,13 @@ const SignUp = () => {
           <button
             type="submit"
             onClick={handleSubmit}
-            className="bg-red-600 text-white font-semibold rounded py-2 md:w-48 ml-28">
+            className="bg-red-600 text-white font-semibold rounded py-2 md:w-48 ml-40">
             Next
           </button>
         </div>
 
       </div>
     </div>
-
   );
 };
 
