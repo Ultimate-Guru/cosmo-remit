@@ -2,10 +2,12 @@
 import React, { useState, useRef } from 'react';
 import Upload from '../assets/img/Upload.png';
 import Circle from '../assets/img/black-Circle.png';
+import { useNavigate } from 'react-router-dom';
 
 const Passport = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const fileInputRef = useRef(null);
+  const navigate = useNavigate();
 
   // Function to handle file input change
   const handleFileChange = (event) => {
@@ -20,6 +22,11 @@ const Passport = () => {
     fileInputRef.current.click();
   };
 
+  // Function to handle navigation when the Next button is clicked
+  const handleNextPage = () => {
+    navigate('/Resident');
+  }
+
   return (
     <div className='flex flex-col items-center gap-16 py-9'>
       <img src={Upload} className='w-7/12' alt="Upload Icon" />
@@ -33,7 +40,7 @@ const Passport = () => {
       {/* Hidden file input */}
       <input type="file" accept="image/*" capture="user" onChange={handleFileChange} ref={fileInputRef} className="hidden"/>
 
-      <button type="submit" className="bg-red-600 text-white font-semibold rounded py-2 md:w-48">Next</button>
+      <button type="submit" className="bg-red-600 text-white font-semibold rounded py-2 md:w-48" onClick={handleNextPage}>Next</button>
     </div>
   );
 };

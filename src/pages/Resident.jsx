@@ -3,9 +3,11 @@ import React, { useState } from 'react';
 import UploadImg from '../assets/img/Upload.png';  
 import UploadTxt from "../assets/img/Resident.png";  
 import UpImg from '../assets/img/document-upload.png';
+import { useNavigate } from 'react-router-dom';
 
 const Upload = () => {  
-  const [selectedFile, setSelectedFile] = useState(null);  
+  const [selectedFile, setSelectedFile] = useState(null); 
+  const navigate = useNavigate(); 
 
   // Handle file selection
   const handleFileChange = (event) => {  
@@ -28,6 +30,10 @@ const Upload = () => {
   const handleDragOver = (event) => {  
     event.preventDefault();  
   };  
+
+  const handleNextPage = () => {
+    navigate('/Transact');
+  }
 
   return (  
     <div className='flex flex-col items-center justify-center gap-5 py-5 bg-white px-4'>  
@@ -59,7 +65,7 @@ const Upload = () => {
             <p className="mt-2 text-green-600">Selected file: {selectedFile.name}</p>
           )}
         </div>  
-          <button type="submit" className="bg-red-600 text-white font-semibold rounded py-2 md:w-48">Next</button>  
+          <button type="submit" className="bg-red-600 text-white font-semibold rounded py-2 md:w-48" onClick={handleNextPage}>Next</button>  
       </div>  
     </div>  
   );  
