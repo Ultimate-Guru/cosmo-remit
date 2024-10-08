@@ -223,7 +223,7 @@ const SignUp = () => {
         </form>
 
         <div className="flex items-center ml-2">
-          <input type="checkbox" className="mr-1" />
+          <input type="checkbox" className="mr-1" required />
           <p className="font-medium text-sm">
             I agree to the {""}
             <a href="#" className="text-red-600 font-medium">terms</a> {""}
