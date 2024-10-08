@@ -2,11 +2,13 @@
 import React, { useRef, useState } from 'react';
 import BackArrow from "../../assets/img/bx_arrow-back.png";
 import UpImg from "../../assets/img/document-upload.png";
+import { useNavigate } from 'react-router-dom';
 
 const Resident = () => {
 
     const [selectedImg, setselectedImg] = useState(null);
     const fileInputRef = useRef(null);
+    const navigate = useNavigate();
 
     // Function to handle file change
     const handleFileChange = (event) => {
@@ -19,6 +21,11 @@ const Resident = () => {
     // Function to trigger file input click when the circle is clicked
     const handleImgClick = () => {
         fileInputRef.current.click();
+    }
+
+    // Function to handle the clicking event
+    const handleNextPage = () => {
+        navigate('/Review');
     }
 
   return (
@@ -47,7 +54,7 @@ const Resident = () => {
             </div>
 
             {/* Next Button */}
-            <button className='bg-red-600 text-white font-semibold rounded-md w-52 py-3 px-16 mt-20 disabled:bg-gray-300'>
+            <button className='bg-red-600 text-white font-semibold rounded-md w-52 py-3 px-16 mt-20 disabled:bg-gray-300' onClick={handleNextPage}>
                 Next
             </button>
         </div>
