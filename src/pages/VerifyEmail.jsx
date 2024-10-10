@@ -18,7 +18,7 @@ const VerifyEmail = () => {
         <div className="flex flex-row justify-center mb-8 w-full">
           <img src={VerifyNav} alt="Navigation" className='w-7/12 mt-4' />
         </div>
-        <img src={VerifyImg} alt="Verify Email" className='mb-7 max-w-full h-68' />
+        <img src={VerifyImg} alt="Verify Email" className='mb-7 max-w-full h-64' />
         <div className="text-center mb-6">
           <p className='font-medium'>We've sent an email to you <span className="font-extrabold">gurumini@gmail.com</span></p>
           <p className='font-medium'>Please check your inbox to verify.</p>
