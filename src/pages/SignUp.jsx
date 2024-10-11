@@ -89,7 +89,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row h-screen">
+    <div className="flex flex-col md:flex-row h-screen overflow-hidden">
       {/* Image container with text and logo */}
       <div className="relative w-full md:w-4/12 h-2/5 md:h-full">
         <img src={bgImage} alt="BgImage" className="w-full h-full object-cover" />
@@ -102,7 +102,7 @@ const SignUp = () => {
       </div>
 
       {/* Form beside the image */}
-      <div className="w-full md:w-1/2 bg-white p-4 md:p-10 ml-14">
+      <div className="w-full md:w-1/2 bg-white p-4 md:p-10 ml-14 mt-0">
         {/* Signup steps */}
         <div className="flex justify-between flex-row mb-7">
         <img src={Nav1} />
@@ -224,7 +224,7 @@ const SignUp = () => {
 
         <div className="flex items-center ml-2">
           <input type="checkbox" className="mr-1" required />
-          <p className="font-medium text-sm">
+          <p className="font-medium text-xs">
             I agree to the {""}
             <a href="#" className="text-red-600 font-medium">terms</a> {""}
             & {""}

@@ -28,11 +28,15 @@ const Resident = () => {
         navigate('/Review');
     }
 
+    const handlePrevPage = () => {
+        navigate('/Residence');
+    }
+
   return (
     <div className='bg-neutral-100 h-screen flex flex-col justify-center items-center p-6'>
         {/* Back Arrow */}
         <div className='absolute top-5 left-0 ml-5'>
-            <img src={BackArrow} alt="BackArrow" className='w-8 cursor-pointer' />
+            <img src={BackArrow} alt="BackArrow" className='w-8 cursor-pointer' onClick={handlePrevPage} />
         </div>
 
         {/* Main Content */}
