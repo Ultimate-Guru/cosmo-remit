@@ -9,7 +9,6 @@ const Transactions = () => {
         fetch('http://localhost:5000/transactions')
             .then(response => response.json())
             .then(data => {
-                console.log(data);  // Log the fetched data
                 setTransactions(data);  // Update state with fetched data
             })
             .catch(error => console.error('Error fetching data:', error));
