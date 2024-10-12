@@ -26,6 +26,7 @@ import Funds from "./dashboard/accountlimits/Funds";
 import Residence from "./dashboard/accountlimits/Residence";
 import Limits from "./dashboard/accountlimits/Limits";
 import LimitForm from "./dashboard/accountlimits/LimitForm";
+import Transactions from "./dashboard/Transactions";
 
 const App = () => {
   return (
@@ -68,6 +69,7 @@ const App = () => {
         <Route path="/Funds" element={<Funds />} />
         <Route path="/Review" element={<Review />} />
         <Route path="/Success" element={<Success />} />
+        <Route path="/Transactions" element={<Transactions />} />
       </Routes>
     </div>
   );
