@@ -26,12 +26,7 @@ import Funds from "./dashboard/accountlimits/Funds";
 import Residence from "./dashboard/accountlimits/Residence";
 import Limits from "./dashboard/accountlimits/Limits";
 import LimitForm from "./dashboard/accountlimits/LimitForm";
-// Emma's User Links
-import UserHome from "./pages/UserHome";
-import UserTransactionHistory from "./pages/UserTransactionHistory";
-import UserBeneficiary from './pages/UserBeneficiary';
-import UserAccountLimits from "./pages/UserAccountLimits";
-import UserProfile from "./components/UserProfile/UserProfile";
+import Profile from "./pages/Profile";
 
 const App = () => {
   return (
@@ -74,14 +69,9 @@ const App = () => {
         <Route path="/Funds" element={<Funds />} />
         <Route path="/Review" element={<Review />} />
         <Route path="/Success" element={<Success />} />
-          
-        {/* User Dashboard Routes */}
-        <Route path="/username/userhome" element={<UserHome />} />
-        <Route path="/username/transactionhistory" element={<UserTransactionHistory />} />
-        <Route path="/username/beneficiary" element={<UserBeneficiary />} />
-        <Route path="/username/accountlimits" element={<UserAccountLimits />} />
-        <Route path="/username/profile" element={<UserProfile />} />
-        
+
+        {/* Dashboard Routes */}
+        <Route path="/username/profile" element={<Profile />} />
       </Routes>
     </div>
   );

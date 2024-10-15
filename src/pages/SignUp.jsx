@@ -1,12 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom"; // Import useNavigate
+import { NavLink, useNavigate } from "react-router-dom";
+import axios from 'axios';
 import bgImage from '../assets/img/Vector.png';
 import Logo from "../assets/img/Favicon.png";
 import Nav1 from '../assets/img/nav1.png'
 
 const SignUp = () => {
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); 
   const [formData, setFormData] = useState({
     FirstName: '',
     LastName: '',
@@ -57,15 +58,14 @@ const SignUp = () => {
 
     // If no validation errors, form is ready to be submitted
     if (Object.keys(validationErrors).length === 0) {
-      window.alert(
-        `Form Submitted Successfully!\n\nData:\nFirst Name: ${formData.FirstName}\nLast Name: ${formData.LastName}\nEmail: ${formData.Email}\nPhone Number: ${formData.PhoneNumber}\nCountry: ${formData.Country}`
-      );
-
-      // Navigate to the verification page after successful validation
-      navigate('/VerifyEmail');
-    } else {
-      window.alert("Validation Failed! Please correct the errors and try again.");
-    }
+        axios.post('http://localhost:8000/users', formData)
+        .then(result => {
+            window.alert('Signed Up Successfully')
+            navigate('/VerifyEmail');
+        })
+        .catch(err => console.log(err)
+        )
+    }    
 
     // Reset form data after submission  
     setFormData({
