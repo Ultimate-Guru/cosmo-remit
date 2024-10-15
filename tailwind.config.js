@@ -8,6 +8,9 @@ export default {
     extend: {
       boxShadow: {  
         'custom': '0px 4px 40px 0px rgba(0, 0, 0, 0.1)',  
+      },
+      fontFamily: {  
+        sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
       }, 
     },
   },
