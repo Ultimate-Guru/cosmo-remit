@@ -1,71 +1,44 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "name": "John Doe",
-            "email": "john@example.com",
-            "balance": 5000,
-            "transactions": [
-                101,
-                102
-            ],
-            "country": "USA"
-        },
-        {
-            "id": 2,
-            "name": "Jane Smith",
-            "email": "jane@example.com",
-            "balance": 7500,
-            "transactions": [
-                103
-            ],
-            "country": "UK"
-        }
-    ],
-    "transactions": [
-        {
-            "id": 101,
-            "fromUserId": 1,
-            "toUserId": 2,
-            "amount": 1000,
-            "currency": "USD",
-            "transactionDate": "2024-10-10",
-            "status": "completed"
-        },
-        {
-            "id": 102,
-            "fromUserId": 1,
-            "toUserId": 2,
-            "amount": 200,
-            "currency": "USD",
-            "transactionDate": "2024-10-11",
-            "status": "pending"
-        },
-        {
-            "id": 103,
-            "fromUserId": 2,
-            "toUserId": 1,
-            "amount": 300,
-            "currency": "GBP",
-            "transactionDate": "2024-10-12",
-            "status": "completed"
-        }
-    ],
-    "settings": {
-        "exchangeRates": {
-            "USD": {
-                "GBP": 0.77,
-                "EUR": 0.85
-            },
-            "GBP": {
-                "USD": 1.3,
-                "EUR": 1.1
-            }
-        },
-        "transactionFees": {
-            "USD": 2.5,
-            "GBP": 2.0,
-            "EUR": 2.2
-        }
+  "users": [
+    {
+      "id": "f51c",
+      "FirstName": "Oluwatosin",
+      "LastName": "Daniel",
+      "Email": "tosinbello360@gmail.com",
+      "PhoneNumber": "08094289816",
+      "Password": "mandy",
+      "ConfirmPassword": "mandy",
+      "Country": "Nigeria"
+    },
+    {
+      "id": "423a",
+      "FirstName": "Bukola",
+      "LastName": "Ayo",
+      "Email": "bukkyayo@gmail.com",
+      "PhoneNumber": "09022733350",
+      "Password": "keke",
+      "ConfirmPassword": "keke",
+      "Country": "USA"
+    },
+    {
+      "id": "1319",
+      "FirstName": "Mandy",
+      "LastName": "Kiss",
+      "Email": "mandy@1gmail.com",
+      "PhoneNumber": "07049828961",
+      "Password": "tinu",
+      "ConfirmPassword": "tinu",
+      "Country": "Nigeria"
+    },
+    {
+      "id": "1c13",
+      "FirstName": "emma",
+      "LastName": "ben",
+      "Email": "emmmanelbernard@gmail.com",
+      "PhoneNumber": "08144153917",
+      "Password": "frica@54321#",
+      "ConfirmPassword": "frica@54321#",
+      "Country": "Nigeria"
     }
+  ]
 }
