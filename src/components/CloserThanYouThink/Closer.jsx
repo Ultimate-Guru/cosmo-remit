@@ -2,36 +2,35 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import BgImg from '../../assets/img/Rectangle 14.png';
-// import './Closer.css'
+import Svg from '../../assets/img/Vector.svg'
 
 function Closer() {
     const bgImage = {
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(${BgImg})`,
+        backgroundImage: `linear-gradient(rgba(40, 20, 8, 0.75), rgba(40, 20, 8, 0.75)), url(${BgImg})`,
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-        height: '50vh',
-        width: '100%'
-      };
-    return(
-        <div style={bgImage} className="text-center p-16">
-            <h2 className="mb-6 text-white text-3xl font-bold text-center">We are closer than you think</h2>
-            <p className="mt-2 text-white h-6 text-xs">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam accusamus nostrum distinctio <br /> expedita at numquam! Facilis, libero necessitatibus.
-            </p>
-            <NavLink to={'/SignUp'} className='text'>            
-            <button className="animated-button">
-                        <svg viewBox="0 0 24 24" className="arr-2 w-6 h-6" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" />
-                        </svg>
-                        <span className="text">Register</span>
-                       
-                        <span className="circle"></span>
-                        <svg viewBox="0 0 24 24" className="arr-1 w-6 h-6" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" />
-                        </svg>
-            </button>
-            </NavLink>
+        width: '1512px',
+        height: '500px',
+    };
+
+    return (
+        <div style={bgImage} className="text-center p-16 leading-loose">
+            <div className="flex items-center justify-center flex-col mr-60 mt-10">
+                <h2 className="mb-6 text-white text-6xl font-semibold text-center">We are closer than you think</h2>
+
+                <p className="mt-2 text-gray-300 h-12 leading-6 text-lg">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eros <br /> tortor, consectetur eget libero non, condimentu
+                </p>
+
+                <NavLink to={'/SignUp'} className='text'>
+                    <button
+                        className="flex items-center justify-around gap-3 text-white bg-red-600 p-1.5 rounded-lg font-semibold text-2xl leading-7 mt-16 py-3 px-24">
+                        Register
+                        <img src={Svg} className="w-7" />
+                    </button>
+                </NavLink>
+            </div>
         </div>
     );
 }

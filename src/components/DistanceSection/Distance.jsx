@@ -4,8 +4,8 @@ import Dis from '../../assets/img/Frame 159.png';
 
 const Distance = () => {
   return (
-    <div>
-        <img src={Dis} />
+    <div className='p-10'>
+        <img src={Dis} className='mt-5 mb-5' />
     </div>
   )
 }

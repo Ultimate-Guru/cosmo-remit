@@ -9,21 +9,24 @@ const Hero = () => {
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    height: '100vh',
+    height: '694px',
     width: '100%'
   };
+
+  const ImgStyles = {
+    width: '470px'
+  }
 
   return (
     <div style={bgImage}>
       <div className='flex justify-between items-center'>
         <div className="">
-          <h1 className="text-5xl font-bold text-white p-6">Send Money <br /> <span className="text-red-600">without</span> Borders</h1>
-          <p className=" text-white font-semibold text-xs ml-6">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut minus et <br /> possimus repudiandae
-            ecusandae optio omnis, quos consequuntur ab neque explicabo <br /> repellendus nulla architecto vero!
+          <h1 className="text-7xl leading-tight font-bold text-white ml-11">Send Money <br /> <span className="text-red-600">without</span> Borders</h1>
+          <p className="text-gray-400 leading-7 font-normal text-lg ml-11 mt-5">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eros <br /> tortor, consectetur eget libero non, condimentum sagittis mauris. Ut <br /> molestie euismod neque. Proin eget odio
           </p>
         </div>
-          <img src={FormImg} className='w-4/12 mr-10 mt-12' />
+        <img src={FormImg} style={ImgStyles} className='mr-10 mt-10' />
       </div>
     </div>
   )

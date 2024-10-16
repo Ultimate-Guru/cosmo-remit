@@ -5,7 +5,7 @@ import Working from '../../assets/img/Frame 150.png';
 const Works = () => {
   return (
     <div className='p-12'>
-        <img src={Working}/>
+        <img src={Working} className='mb-10'/>
     </div>
   )
 }
