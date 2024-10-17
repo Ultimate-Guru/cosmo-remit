@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import Dashboard from '../components/UserDashboard/UserDashboard';
 import UserNavbar from '../components/UserNavbar/UserNavbar';
