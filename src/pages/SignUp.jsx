@@ -2,12 +2,23 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from 'axios';
-import bgImage from '../assets/img/Vector.png';
-import Logo from "../assets/img/Favicon.png";
-import Nav1 from '../assets/img/nav1.png'
+import bgImage from '../assets/img/SignImg.png';
+import Nav1 from '../assets/img/nav1.png';
+import Eye from '../assets/img/eye-slash.png';
+import EyeOpen from '../assets/img/eye.png';
 
 const SignUp = () => {
-  const navigate = useNavigate(); 
+
+  const BGimage = {
+    backgroundImage: `url(${bgImage})`,
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    width: "400px",
+    height: '100vh'
+  }
+
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     FirstName: '',
     LastName: '',
@@ -19,6 +30,8 @@ const SignUp = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false); // Password visibility state
+  const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] = useState(false); // Confirm password visibility state
 
   // Validation logic
   const validate = () => {
@@ -58,14 +71,14 @@ const SignUp = () => {
 
     // If no validation errors, form is ready to be submitted
     if (Object.keys(validationErrors).length === 0) {
-        axios.post('http://localhost:8000/users', formData)
+      axios.post('http://localhost:8000/users', formData)
         .then(result => {
-            window.alert('Signed Up Successfully')
-            navigate('/VerifyEmail');
+          window.alert('Signed Up Successfully')
+          navigate('/VerifyEmail');
         })
         .catch(err => console.log(err)
         )
-    }    
+    }
 
     // Reset form data after submission  
     setFormData({
@@ -88,29 +101,46 @@ const SignUp = () => {
     }));
   };
 
+  // Toggle password visibility
+  const togglePasswordVisibility = () => {
+    setIsPasswordVisible(!isPasswordVisible);
+  };
+
+  const toggleConfirmPasswordVisibility = () => {
+    setIsConfirmPasswordVisible(!isConfirmPasswordVisible);
+  };
+
   return (
-    <div className="flex flex-col md:flex-row h-screen overflow-hidden">
-      {/* Image container with text and logo */}
-      <div className="relative w-full md:w-4/12 h-2/5 md:h-full">
-        <img src={bgImage} alt="BgImage" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-[rgba(0,0,0,0.54)]"></div>
-        <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-          <h1 className="text-lg font-bold text-white">The fastest way to</h1>
-          <h2 className="text-xl font-extrabold text-red-600">send money abroad</h2>
-          <img src={Logo} alt="CosmoLogo" className="w-24 md:w-50 ml-10 md:mt-32" />
+    <div className="flex flex-col md:flex-row">
+
+      <div style={BGimage}>
+        <div className="w-96 h-32 mt-24 text-center">
+          <p className="font-medium text-4xl text-gray-300">
+            The fastest way to
+            <br />
+            <span className="text-red-600">send money abroad</span>
+          </p>
         </div>
+        <h2 className="w-32 h-20 font-bold text-5xl text-white text-center ml-32 mt-20">Logo</h2>
       </div>
 
+
+
       {/* Form beside the image */}
-      <div className="w-full md:w-1/2 bg-white p-4 md:p-10 ml-14 mt-0">
+      <div className="w-full md:w-1/2 p-4 md:p-10 ml-24 mt-[-15px]">
+
+        {/* <div className="h-12">
+        <img src={Logo} className="w-24 ml-[100%] mt-[-20px]" />
+      </div> */}
+
         {/* Signup steps */}
-        <div className="flex justify-between flex-row mb-7">
-        <img src={Nav1} />
+        <div className="mb-7">
+          <img src={Nav1} />
         </div>
 
         {/* Sign up form */}
         <div className="text-center ml-10">
-          <h3 className="font-bold mb-2 md:mb-4 text-lg md:text-2xl">Sign up</h3>
+          <h3 className="font-semibold mb-2 text-2xl h-10">Sign up</h3>
           <p className="text-gray-400 mb-4 md:mb-6 font-medium text-xs">
             Please fill in your name as it appears on your official documents
             and government IDs.
@@ -164,18 +194,24 @@ const SignUp = () => {
               <p className="text-red-500 text-xs font-medium">{errors.PhoneNumber}</p>
             </div>
 
-            <label className="text-gray-500 font-medium text-sm">Confirm Password</label>
-            <div className="mb-4">
+            <label className="text-gray-500 font-medium text-sm mt-4">Confirm Password</label>
+            <div className="flex items-center mb-4">
               <input
-                type="password"
+                type={isConfirmPasswordVisible ? 'text' : 'password'}
                 name="ConfirmPassword"
                 value={formData.ConfirmPassword}
                 onChange={handleChange}
-                className="border rounded bg-gray-100 h-8 p-2 w-full md:w-64 outline-none"
+                className="rounded border bg-gray-100 h-8 p-2 w-full md:w-64 outline-none"
                 required
               />
-              <p className="text-red-500 text-xs font-medium">{errors.ConfirmPassword}</p>
+              <img
+                src={isConfirmPasswordVisible ? EyeOpen : Eye}
+                alt="Toggle Confirm Password Visibility"
+                onClick={toggleConfirmPasswordVisibility}
+                style={{ cursor: 'pointer', marginLeft: '-30px', width: '24px', height: '20px', padding: '2px' }}
+              />
             </div>
+            <p className="text-red-500 text-xs font-medium">{errors.ConfirmPassword}</p>
           </div>
 
           {/* Right column inputs */}
@@ -206,34 +242,40 @@ const SignUp = () => {
               <p className="text-red-500 text-xs font-medium">{errors.Email}</p>
             </div>
 
-            <label className="text-gray-500 font-medium text-sm">Password</label>
-            <div className="mb-4">
+            <label className="text-gray-500 font-medium text-sm mt-4">Password</label>
+            <div className="flex items-center mb-4">
               <input
-                type="password"
+                type={isPasswordVisible ? 'text' : 'password'}
                 name="Password"
                 value={formData.Password}
                 onChange={handleChange}
                 className="rounded border bg-gray-100 h-8 p-2 w-full md:w-64 outline-none"
                 required
               />
-              <p className="text-red-500 text-xs font-medium">{errors.Password}</p>
+              <img
+                src={isPasswordVisible ? EyeOpen : Eye}
+                alt="Toggle Password Visibility"
+                onClick={togglePasswordVisibility}
+                style={{ cursor: 'pointer', marginLeft: '-30px', width: '24px', height: '20px', padding: '2px' }}
+              />
             </div>
+            <p className="text-red-500 text-xs font-medium">{errors.Password}</p>
 
           </div>
         </form>
 
-        <div className="flex items-center ml-2">
+        <div className="flex flex-row items-center ml-2 w-full">
           <input type="checkbox" className="mr-1" required />
-          <p className="font-medium text-xs">
-            I agree to the {""}
-            <a href="#" className="text-red-600 font-medium">terms</a> {""}
-            & {""}
-            <a href="#" className="text-red-600 font-medium">conditions</a>
+          <p className="font-medium text-[10px] whitespace-nowrap gap-1 inline-flex">
+            I agree to the {" "}
+            <a href="#" className="text-red-600 font-medium">terms</a> & {" "}
+            <a href="#" className="text-red-600 font-medium">conditions</a> and{" "}
+            <a href="#" className="text-red-600 font-medium">privacy policy</a>
           </p>
           <button
             type="submit"
             onClick={handleSubmit}
-            className="bg-red-600 text-white font-semibold rounded py-2 md:w-48 ml-40">
+            className="bg-red-600 text-white font-semibold rounded p-2.5 w-52 ml-auto">
             Next
           </button>
         </div>

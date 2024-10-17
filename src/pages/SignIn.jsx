@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Eye from '../assets/img/eye-slash.png';
+import EyeOpen from '../assets/img/eye.png';
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -11,6 +13,8 @@ const SignIn = () => {
   });
 
   const [error, setError] = useState(''); // Single error message
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false); // Password visibility state
+  const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] = useState(false); // Confirm password visibility state
 
   // Validation logic
   const validate = () => {
@@ -70,10 +74,20 @@ const SignIn = () => {
     }));
   };
 
+
+  // Toggle password visibility
+  const togglePasswordVisibility = () => {
+    setIsPasswordVisible(!isPasswordVisible);
+  };
+
+  const toggleConfirmPasswordVisibility = () => {
+    setIsConfirmPasswordVisible(!isConfirmPasswordVisible);
+  };
+
   return (
     <div>
       <div className="flex flex-col items-center justify-center min-h-screen bg-background p-4">
-        <h1 className="text-2xl font-bold text-foreground">Welcome back!</h1>
+        <h1 className="text-3xl font-semibold h-11 text-foreground">Welcome back!</h1>
         <p className="text-gray-500 font-medium text-sm">
           New to CosmoRemit?{' '}
           <NavLink to={'/SignUp'} className="text-red-600">Sign up</NavLink>
@@ -101,12 +115,18 @@ const SignIn = () => {
           <label className="block text-left text-muted-foreground mt-4" htmlFor="password">Password</label>
           <div className="mb-4">
             <input
-              type="password"
+              type={isPasswordVisible ? 'text' : 'password'}
               name="Password"
               value={formData.Password}
               onChange={handleChange}
               className="rounded bg-gray-100 h-8 p-2 w-96 outline-none"
               required
+            />
+            <img
+              src={isPasswordVisible ? EyeOpen : Eye}
+              alt="Toggle Password Visibility"
+              onClick={togglePasswordVisibility}
+              style={{ cursor: 'pointer', marginLeft: '93%', marginTop: '-25px', width: '24px', height: '20px', padding: '2px' }}
             />
           </div>
 
