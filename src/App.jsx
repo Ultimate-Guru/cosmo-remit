@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Navbar from "../src/components/Navbar/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/HeroSection/Hero";
 import Choose from "./components/WhyChooseUs/Choose";
 import Closer from "./components/CloserThanYouThink/Closer";
@@ -26,7 +26,7 @@ import Funds from "./dashboard/accountlimits/Funds";
 import Residence from "./dashboard/accountlimits/Residence";
 import Limits from "./dashboard/accountlimits/Limits";
 import LimitForm from "./dashboard/accountlimits/LimitForm";
-import Transactions from "./dashboard/Transactions";
+import Profile from "./pages/Profile";
 
 const App = () => {
   return (
@@ -69,7 +69,9 @@ const App = () => {
         <Route path="/Funds" element={<Funds />} />
         <Route path="/Review" element={<Review />} />
         <Route path="/Success" element={<Success />} />
-        <Route path="/Transactions" element={<Transactions />} />
+
+        {/* Dashboard Routes */}
+        <Route path="/username/profile" element={<Profile />} />
       </Routes>
     </div>
   );
