@@ -26,7 +26,7 @@ import Funds from "./dashboard/accountlimits/Funds";
 import Residence from "./dashboard/accountlimits/Residence";
 import Limits from "./dashboard/accountlimits/Limits";
 import LimitForm from "./dashboard/accountlimits/LimitForm";
-import Profile from "./pages/Profile";
+import Profile from "./pages/UserProfile";
 
 const App = () => {
   return (
