@@ -26,6 +26,11 @@ import Funds from "./dashboard/accountlimits/Funds";
 import Residence from "./dashboard/accountlimits/Residence";
 import Limits from "./dashboard/accountlimits/Limits";
 import LimitForm from "./dashboard/accountlimits/LimitForm";
+import Layout from "./dashboard/shared/Layout";
+import Home from '../src/dashboard/home/Home'
+import Transactions from '../src/dashboard/transactionHistory/Transactions';
+import Beneficiary from "./dashboard/beneficiaryList/Beneficiary";
+import Profile from "./dashboard/profile/Profile";
 
 const App = () => {
   return (
@@ -62,12 +67,24 @@ const App = () => {
         <Route path="/Confirm" element={<Confirm />} />
 
         {/* Dashboard-related Routes */}
+        <Route path="/Layout" element={<Layout />}/>
+
+        <Route path="/Home" element={<Home />}/>
+
+        <Route path="/Transactions" element={<Transactions/>}/>
+
+        <Route path="/Beneficiary" element={<Beneficiary />}/>
+
+        <Route path="/Profile" element={<Profile />}/>
+
+        
         <Route path="/Limits" element={<Limits />} />
         <Route path="/LimitForm" element={<LimitForm />} />
         <Route path="/Residence" element={<Residence />} />
         <Route path="/Funds" element={<Funds />} />
         <Route path="/Review" element={<Review />} />
         <Route path="/Success" element={<Success />} />
+
       </Routes>
     </div>
   );

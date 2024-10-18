@@ -2,10 +2,10 @@
 import React, { useEffect } from 'react';  
 import ReviewImg from '../../assets/img/Frame 317.png';  
 import HomeArrow from '../../assets/img/Frame 257.png';  
-import { useNavigate } from 'react-router-dom';  
+import { NavLink, useNavigate } from 'react-router-dom';  
 
 function Review() {  
-    const navigate = useNavigate();  
+    const navigate = useNavigate();
 
     useEffect(() => {  
         // Set a timeout to navigate to the success page after 10 seconds  
@@ -21,7 +21,7 @@ function Review() {
         <div className='h-screen flex flex-col items-center justify-center p-6 relative'>  
             {/* Go home link */}  
             <div className="absolute top-5 left-5 flex items-center space-x-2 cursor-pointer">  
-                <img src={HomeArrow} alt="Go back" />  
+              <NavLink to={'/Layout'}> <img src={HomeArrow} alt="Go back"  /> </NavLink>
             </div>  
 
             {/* Review Image */}  

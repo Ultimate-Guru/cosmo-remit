@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
 
-const Home = () => {
+const Profile = () => {
   return (
-    <div>Welcome</div>
+    <div>Profile Page</div>
   )
 }
 
-export default Home
+export default Profile

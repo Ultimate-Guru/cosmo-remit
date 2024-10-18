@@ -6,7 +6,7 @@ const Transactions = () => {
 
     useEffect(() => {
         // Fetch data from JSON server
-        fetch('http://localhost:5000/transactions')
+        fetch('http://localhost:8000/transactions')
             .then(response => response.json())
             .then(data => {
                 setTransactions(data);  // Update state with fetched data
