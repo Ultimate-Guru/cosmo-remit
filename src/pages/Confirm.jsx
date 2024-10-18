@@ -36,7 +36,7 @@ const Transact = () => {
     // Check if all inputs are filled
     if (pin.every((item) => item !== "")) {
       // If all inputs are filled, navigate to the next page
-      navigate("/Confirm");
+      navigate("/");
     }
   };
 
