@@ -30,6 +30,7 @@ import Layout from "./dashboard/shared/Layout";
 import Home from '../src/dashboard/home/Home'
 import Transactions from '../src/dashboard/transactionHistory/Transactions';
 import Beneficiary from "./dashboard/beneficiaryList/Beneficiary";
+import AddBeneficiary from "./dashboard/beneficiaryList/AddBeneficiary";
 import Profile from "./dashboard/profile/Profile";
 
 const App = () => {
@@ -74,6 +75,7 @@ const App = () => {
         <Route path="/Transactions" element={<Transactions/>}/>   
 
         <Route path="/Beneficiary" element={<Beneficiary />}/>
+        <Route path="/AddBeneficiary" element={<AddBeneficiary />}/>
 
         <Route path="/Profile" element={<Profile />}/>
 
