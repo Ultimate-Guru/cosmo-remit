@@ -22,26 +22,75 @@
     }
   ],
   "transactions": [
-    {
-      "id": "txn1",
-      "userId": "f51c",
-      "amount": 200,
-      "date": "2024-10-25",
-      "description": "Online Purchase"
-    },
-    {
-      "id": "txn2",
-      "userId": "f51c",
-      "amount": 50,
-      "date": "2024-10-24",
-      "description": "Transport Fare"
-    },
-    {
-      "id": "txn3",
-      "userId": "423a",
-      "amount": 100,
-      "date": "2024-10-23",
-      "description": "Groceries"
-    }
-  ]
+  {
+    "id": "txn1",
+    "userId": "f51c",
+    "Reference": "REF12345",
+    "Amount Sent": 500,
+    "Rate": 450,
+    "Channel": "Bank Transfer",
+    "Recipient": "John Doe",
+    "Status": "Completed"
+  },
+  {
+    "id": "txn2",
+    "userId": "f51c",
+    "Reference": "REF12346",
+    "Amount Sent": 300,
+    "Rate": 460,
+    "Channel": "Mobile Wallet",
+    "Recipient": "Jane Smith",
+    "Status": "Pending"
+  },
+  {
+    "id": "txn3",
+    "userId": "423a",
+    "Reference": "REF12347",
+    "Amount Sent": 150,
+    "Rate": 455,
+    "Channel": "Cash Pickup",
+    "Recipient": "Michael Lee",
+    "Status": "Completed"
+  },
+  {
+    "id": "txn4",
+    "userId": "f51c",
+    "Reference": "REF12348",
+    "Amount Sent": 200,
+    "Rate": 452,
+    "Channel": "Bank Transfer",
+    "Recipient": "Alice Brown",
+    "Status": "Cancelled"
+  },
+  {
+    "id": "txn5",
+    "userId": "423a",
+    "Reference": "REF12349",
+    "Amount Sent": 400,
+    "Rate": 450,
+    "Channel": "Mobile Wallet",
+    "Recipient": "Chris Green",
+    "Status": "Completed"
+  },
+  {
+    "id": "txn6",
+    "userId": "f51c",
+    "Reference": "REF12350",
+    "Amount Sent": 750,
+    "Rate": 448,
+    "Channel": "Online Payment",
+    "Recipient": "Sophia White",
+    "Status": "Pending"
+  },
+  {
+    "id": "txn7",
+    "userId": "423a",
+    "Reference": "REF12351",
+    "Amount Sent": 600,
+    "Rate": 453,
+    "Channel": "Bank Transfer",
+    "Recipient": "David Black",
+    "Status": "Completed"
+  }
+]
 }
