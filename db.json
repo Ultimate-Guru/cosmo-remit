@@ -4,7 +4,7 @@
       "id": "f51c",
       "FirstName": "Oluwatosin",
       "LastName": "Daniel",
-      "Email": "tosinbello360@gmail.com",
+      "Email": "tosindaniel360@gmail.com",
       "PhoneNumber": "08094289816",
       "Password": "mandy",
       "ConfirmPassword": "mandy",
@@ -19,36 +19,29 @@
       "Password": "keke",
       "ConfirmPassword": "keke",
       "Country": "USA"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "txn1",
+      "userId": "f51c",
+      "amount": 200,
+      "date": "2024-10-25",
+      "description": "Online Purchase"
     },
     {
-      "id": "1319",
-      "FirstName": "Mandy",
-      "LastName": "Kiss",
-      "Email": "mandy@1gmail.com",
-      "PhoneNumber": "07049828961",
-      "Password": "tinu",
-      "ConfirmPassword": "tinu",
-      "Country": "Nigeria"
+      "id": "txn2",
+      "userId": "f51c",
+      "amount": 50,
+      "date": "2024-10-24",
+      "description": "Transport Fare"
     },
     {
-      "id": "1c13",
-      "FirstName": "emma",
-      "LastName": "ben",
-      "Email": "emmmanelbernard@gmail.com",
-      "PhoneNumber": "08144153917",
-      "Password": "frica@54321#",
-      "ConfirmPassword": "frica@54321#",
-      "Country": "Nigeria"
-    },
-    {
-      "id": "4076",
-      "FirstName": "Temitope",
-      "LastName": "Dorcas",
-      "Email": "temitopedorcas@gmail.com",
-      "PhoneNumber": "09017144281",
-      "Password": "timzy",
-      "ConfirmPassword": "timzy",
-      "Country": "USA"
+      "id": "txn3",
+      "userId": "423a",
+      "amount": 100,
+      "date": "2024-10-23",
+      "description": "Groceries"
     }
   ]
 }

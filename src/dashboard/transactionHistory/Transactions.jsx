@@ -20,7 +20,7 @@ const Transactions = () => {
             <ul>
                 {transactions.map(transaction => (
                     <li key={transaction.id}>
-                        Transaction ID: {transaction.id}, Amount: {transaction.amount}, Status: {transaction.status}
+                        Transaction ID: {transaction.id}, Amount: {transaction.amount}, Status: {transaction.description};
                     </li>
                 ))}
             </ul>
