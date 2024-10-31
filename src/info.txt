@@ -1,112 +1,46 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import Search from "../../assets/img/ic_sharp-search.png";
-import AddImg from "../../assets/img/ic_baseline-person-add.png";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
- const Beneficiary = () => {
+function Limits() {
+  const navigate = useNavigate();
 
-   return (
-     <div className="bg-gray-100">
-     <div className="flex items-center justify-center">
-         <div className="w-[466px] h-28 mt-60 absolute left-[290px] gap-[16px]">
-           <h1 className="w-[466px] h-11 text-[26px] font-medium text-black">
-             Beneficiary
-           </h1>
-           <div className="flex items-center mt-2">
-             <input
-               type="text"
-               placeholder="Search"
-               className="w-[466px] h-12 bg-gray-200 rounded-[12.5px] outline-none placeholder:font-normal placeholder:text-base placeholder:text-gray-400 py-[3px] px-[12.86px]"
-             />
-             <img
-               src={Search}
-               className="w-[15px] h-[15px] absolute right-[10px]"
-             />
-           </div>
-         </div>
+  // Function to handle the clicking event
+  const handleNextPage = () => {
+    navigate('/LimitForm')
+  }
 
-         <div className="w-[200px] h-[54px] absolute top-[87px] left-[990px] bg-red-600 gap-3 rounded-2xl">
-           <NavLink
-             to={"/AddBeneficiary"}
-             className="flex items-center justify-center w-full h-full"
-           >
-             <button className="w-36 h-7 text-[14.71px] font-medium text-white flex items-center">
-               <img src={AddImg} alt="Add Beneficiary" className="mr-1 filter invert" />
-               Add beneficiary
-             </button>
-           </NavLink>
+  return (
+    <div className=" mt-[160px] h-screen">
+      {/* Account Limits Title */}
+      <h1 className="font-extrabold text-xl text-left ml-40 mb-6 w-[188px]">Account Limits</h1>
+      
+      {/* Current Limits Section */}
+      <div className="ml-10">
+        <h2 className="font-bold text-lg mb-4 ml-48 w-[161px]">Current Limits</h2>
+
+        {/* Limits Card */}
+        <div className="flex items-center justify-between p-8 bg-white rounded-lg w-[750px] shadow-lg ml-48">
+          {/* Daily Limit */}
+          <div className="text-left">
+            <p className="text-gray-400 font-semibold">Daily limit</p>
+            <p className="text-black font-semibold text-lg">20,000 UK</p>
+          </div>
+
+          {/* Yearly Limit */}
+          <div className="text-left">
+            <p className="text-gray-400 font-semibold">Yearly limit</p>
+            <p className="text-black font-semibold text-lg">1,000,000 UK</p>
+          </div>
+
+          {/* Increase Limits Button */}
+          <button className="bg-red-600 text-white font-bold p-3 rounded-md w-48" onClick={handleNextPage}>
+            Increase Limits
+          </button>
         </div>
-
       </div>
-        <div className="w-[900px] h-[560px] mt-48 ml-72 rounded-2xl bg-white shadow-lg p-12">
-          <div className="flex justify-between items-center w-[470px] h-7 gap-[40px]">
-              <h2 className="text-xl font-normal" style={{color: '#4a5568'}}>Account name</h2>
-              <h2 className="text-xl font-normal" style={{color: '#4a5568'}}>Country</h2>
-          </div>
-
-          <div className="flex items-center justify-between flex-col w-[800px] h-[352px] mt-10">
-            <div className="bg-gray-200 w-[800px] h-[62px] rounded-[15px]">
-              <div className="flex items-center justify-between w-[800px] h-[27.35px]">
-                <div className="flex flex-row justify-between h-[27.35px]">
-                <h1 className="text-black text-xl font-normal w-32 h-8">John Swead</h1>
-                <h1 className="text-black text-xl font-normal">NGR-Naira</h1>
-                </div>
-
-                <div className="flex items-center justify-center flex-row w-[233px] h-[27.35px] gap-[40px]">
-                <h1 className="text-black text-xl font-normal w-12">View</h1>
-                <h1 className="text-red-600 w-16 h-8 font-normal text-xl">Delete</h1>
-                </div>
-             
-              </div>
-            </div>
-            <div className="bg-gray-200 w-[800px] h-[62px] rounded-[15px]">
-              <div className="flex items-center justify-between w-[800px] h-[27.35px]">
-                <div className="flex flex-row justify-between h-[27.35px]">
-                <h1 className="text-black text-xl font-normal w-32 h-8">John Swead</h1>
-                <h1 className="text-black text-xl font-normal">NGR-Naira</h1>
-                </div>
-
-                <div className="flex items-center justify-center flex-row w-[233px] h-[27.35px] gap-[40px]">
-                <h1 className="text-black text-xl font-normal w-12">View</h1>
-                <h1 className="text-red-600 w-16 h-8 font-normal text-xl">Delete</h1>
-                </div>
-             
-              </div>
-            </div>
-            <div className="bg-gray-200 w-[800px] h-[62px] rounded-[15px]">
-              <div className="flex items-center justify-between w-[800px] h-[27.35px]">
-                <div className="flex flex-row justify-between h-[27.35px]">
-                <h1 className="text-black text-xl font-normal w-32 h-8">John Swead</h1>
-                <h1 className="text-black text-xl font-normal">NGR-Naira</h1>
-                </div>
-
-                <div className="flex items-center justify-center flex-row w-[233px] h-[27.35px] gap-[40px]">
-                <h1 className="text-black text-xl font-normal w-12">View</h1>
-                <h1 className="text-red-600 w-16 h-8 font-normal text-xl">Delete</h1>
-                </div>
-             
-              </div>
-            </div>
-            <div className="bg-gray-200 w-[800px] h-[62px] rounded-[15px]">
-              <div className="flex items-center justify-between w-[800px] h-[27.35px]">
-                <div className="flex flex-row justify-between h-[27.35px]">
-                <h1 className="text-black text-xl font-normal w-32 h-8">John Swead</h1>
-                <h1 className="text-black text-xl font-normal">NGR-Naira</h1>
-                </div>
-
-                <div className="flex items-center justify-center flex-row w-[233px] h-[27.35px] gap-[40px]">
-                <h1 className="text-black text-xl font-normal w-12">View</h1>
-                <h1 className="text-red-600 w-16 h-8 font-normal text-xl">Delete</h1>
-                </div>
-             
-              </div>
-            </div>
-
-          </div>
-        </div>
-     </div>
+    </div>
   );
- };
+}
 
-export default Beneficiary;
+export default Limits;

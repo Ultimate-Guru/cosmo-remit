@@ -25,7 +25,6 @@ import Review from "./dashboard/accountlimits/Review";
 import Funds from "./dashboard/accountlimits/Funds";
 import Residence from "./dashboard/accountlimits/Residence";
 import Limits from "./dashboard/accountlimits/Limits";
-import LimitForm from "./dashboard/accountlimits/LimitForm";
 import Layout from "./dashboard/shared/Layout";
 import Home from '../src/dashboard/home/Home'
 import Transactions from '../src/dashboard/transactionHistory/Transactions';
@@ -85,7 +84,6 @@ const App = () => {
 
         
         <Route path="/Limits" element={<Limits />} />
-        <Route path="/LimitForm" element={<LimitForm />} />
         <Route path="/Residence" element={<Residence />} />
         <Route path="/Funds" element={<Funds />} />
         <Route path="/Review" element={<Review />} />
