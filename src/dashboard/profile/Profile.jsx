@@ -4,8 +4,8 @@ import PImg from '../../assets/img/brock-wegner.png'
 
 const Profile = () => {
   return (
-    <div className='bg-gray-100'>
-      <div className='flex items-center justify-center'>
+    <div>
+      <div className=''>
 
         <div className='w-[918px] h-[729px] bg-white shadow-md mt-36 ml-32 rounded-2xl p-12'>
           <div className='flex justify-between items-center flex-row gap-3'>
