@@ -18,7 +18,7 @@ function Limits() {
   }
 
   return (
-    <div className="mt-[160px] h-screen relative">
+    <div className="mt-[200px] ml-5 h-screen relative">
       {/* Account Limits Title */}
       <h1 className="font-extrabold text-xl text-left ml-40 mb-6 w-[188px]">Account Limits</h1>
 

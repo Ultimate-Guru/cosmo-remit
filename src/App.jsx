@@ -33,6 +33,7 @@ import AddBeneficiary from "./dashboard/beneficiaryList/AddBeneficiary";
 import Profile from "./dashboard/profile/Profile";
 import Notice from "./dashboard/home/Notice";
 import Successful from "./dashboard/home/Successful";
+import Receiver from './dashboard/home/Receiver'
 
 const App = () => {
   return (
@@ -72,6 +73,7 @@ const App = () => {
         <Route path="/Layout" element={<Layout />}/>
 
         <Route path="/Home" element={<Home />}/>
+        <Route path="/Receiver" element={<Receiver />}/>
         <Route path="/Notice" element={<Notice />} />
         <Route path="/Successful" element={<Successful />} />
 

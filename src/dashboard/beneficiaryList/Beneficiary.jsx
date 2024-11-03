@@ -6,16 +6,16 @@ import { NavLink } from "react-router-dom";
 
 const Beneficiary = () => {
   return (
-    <div className="bg-gray-100">
+    <div className="p-32">
       <div className="flex justify-between items-center p-9 w-[1000px] ml-[90px]">
         {/* Title and Search */}
-        <div className="flex flex-col gap-5 w-[466px] h-[96.16px] absolute left-[210px]">
-          <h1 className="text-2xl font-medium text-black">Beneficiary</h1>
+        <div className="flex flex-col gap-5 w-[466px] h-[96.16px] absolute left-[280px]">
+          <h1 className="text-[26px] h-11 w-[466.59px] font-medium text-black">Beneficiary</h1>
           <div className="relative">
             <input
               type="text"
               placeholder="Search"
-              className="w-[466px] h-12 bg-gray-200 rounded-lg outline-none pl-4 pr-10 placeholder:text-gray-400"
+              className="w-[466px] h-12 bg-gray-300 rounded-3xl outline-none pl-4 pr-10 placeholder:text-gray-400"
             />
             <img
               src={Search}
@@ -26,7 +26,7 @@ const Beneficiary = () => {
         </div>
 
         {/* Add Beneficiary Button */}
-        <div className="relative left-[900px]">
+        <div className="relative left-[630px] top-[-20px]">
           <NavLink to={"/AddBeneficiary"}>
             <button className="bg-red-600 text-white flex items-center gap-2 px-4 py-3 rounded-lg">
               <img
@@ -41,7 +41,7 @@ const Beneficiary = () => {
       </div>
 
       {/* Beneficiary List */}
-      <div className="w-[1000px] mx-auto bg-white rounded-xl shadow-lg p-14 ml-52 mt-12">
+      <div className="w-[980px] mx-auto bg-white rounded-xl shadow-lg p-14 ml-[-30px] mt-[35px]">
         <div className="flex justify-between items-center text-gray-600 text-lg font-medium mb-6 w-[460px]">
           <h2>Account name</h2>
           <h2>Country</h2>

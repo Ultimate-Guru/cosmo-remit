@@ -21,7 +21,7 @@ function Review() {
         <div className='h-screen flex flex-col items-center justify-center p-6 relative'>  
             {/* Go home link */}  
             <div className="absolute top-5 left-5 flex items-center space-x-2 cursor-pointer">  
-              <NavLink to={'/Home'}> <img src={HomeArrow} alt="Go back"  /> </NavLink>
+              <NavLink to={'/Layout'}> <img src={HomeArrow} alt="Go back"  /> </NavLink>
             </div>  
 
             {/* Review Image */}  

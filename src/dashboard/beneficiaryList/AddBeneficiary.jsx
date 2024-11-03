@@ -8,7 +8,7 @@ const AddBeneficiary = () => {
     const navigate = useNavigate();
 
     function nextPage() {
-        navigate('/Beneficiary');
+        navigate('/Layout');
     }
 
     return (
