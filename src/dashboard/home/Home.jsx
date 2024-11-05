@@ -6,6 +6,9 @@ import Flag from '../../assets/img/twemoji_flag-nigeria.png'
 import RedCircle from '../../assets/img/Ellipse 4.png'
 import Send from '../../assets/img/bi_send-fill.png'
 import UK from '../../assets/img/twemoji_flag-united-kingdom.png'
+import Cancel from '../../assets/img/hugeicons_cancel-01.png'
+import AddImg from "../../assets/img/ic_baseline-person-add.png";
+import Search from "../../assets/img/ic_sharp-search.png";
 
 const Home = () => {
 
@@ -17,8 +20,9 @@ const Home = () => {
     currencyReceive: 'NGN',
     rate: '1 UK = 1700 NGN',
     charges: 0,
+    Bene: ''
   });
-  
+
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
@@ -33,10 +37,7 @@ const Home = () => {
 
   const [showConfirmForm, setShowConfirmForm] = useState(false);
   const [TransactForm, setTransactForm] = useState(false);
-
-  function handlePrevPage() {
-    setShowConfirmForm(!showConfirmForm);
-  }
+  const [ShowBene, setShowBene] = useState(false);
 
   function handleOverlayToggle() {
     setShowConfirmForm(!showConfirmForm);
@@ -44,6 +45,14 @@ const Home = () => {
 
   function handleOverlayToggle2() {
     setTransactForm(!TransactForm);
+  }
+
+  function handlePrevPage() {
+    setShowConfirmForm(!showConfirmForm);
+  }
+
+  function handleOverlayToggle3() {
+    setShowBene(!ShowBene);
   }
 
   return (
@@ -165,38 +174,123 @@ const Home = () => {
         </div>
       </div>
 
-      {/* <div className="flex justify-end absolute left-[800px] top-[130px] p-4">
-        <div className="bg-white rounded-lg shadow-xl p-6 w-[438px] h-[760px]">
+
+      <div className="flex justify-end absolute left-[800px] top-[130px] p-4">
+        <div className="bg-white rounded-lg shadow-xl p-6 w-[438px] h-[800px]">
           <h2 className="w-[220px] h-11 absolute top-9 left-40 font-medium text-[23px]">Make a Transfer</h2>
           <div className='w-[532px] h-[700px] absolute top-[120px] left-[31px] gap-[32px]'>
-
             <div className="bg-gray-100 w-[410px] h-[80px] rounded-[10px] py-2 px-[24px] gap-[10px] mb-10">
               <label className='block text-base font-medium text-gray-500'>You send</label>
               <div className="flex items-center">
-                <input type="number" className='bg-transparent outline-none rounded-lg p-2 w-[300px] placeholder-black placeholder:font-medium placeholder:text-xl' placeholder="500" />
-                <img src={UK} className='w-[20px] h-[20px] mr-[4px]' /><select className='border-none font-normal text-[18px] outline-none bg-transparent w-20'>
-                  <option>UK</option>
+                <input
+                  type="number"
+                  name="sendAmount"
+                  value={formData.sendAmount}
+                  onChange={handleInputChange}
+                  className='bg-transparent outline-none rounded-lg p-2 w-[300px] placeholder-black placeholder:font-medium placeholder:text-xl'
+                  placeholder="500"
+                />
+                <img src={UK} className='w-[20px] h-[20px] mr-[4px]' />
+                <select className='border-none font-normal text-[18px] outline-none bg-transparent w-20' >
+                  <option>{formData.currencySend}</option>
                 </select>
               </div>
             </div>
 
             <div className="bg-gray-100 w-[410px] h-[80px] rounded-[10px] py-3 px-[24px] gap-[10px] mb-10">
-              <label className='block text-base font-medium text-gray-500' style={{ color: 'rgba(147, 147, 147, 1)' }}>Payment method</label>
-              <select className='border-none text-[18px] outline-none text-xl font-medium w-[365px] h-[27px] bg-transparent'>
+              <label className='block text-base font-medium text-gray-500'>Payment method</label>
+              <select
+                name="paymentMethod"
+                value={formData.paymentMethod}
+                onChange={handleInputChange}
+                className='border-none text-[18px] outline-none text-xl font-medium w-[365px] h-[27px] bg-transparent'
+              >
                 <option>Bank transfer</option>
               </select>
             </div>
 
+            <div
+              value={formData.Bene}
+              onChange={handleInputChange}
+              onClick={handleOverlayToggle3}
+              className="bg-gray-100 w-[410px] h-[80px] rounded-[10px] py-3 px-[24px] gap-[10px] mb-10">
+              {/* Add Recipient */}
+              {
+                ShowBene && (
+                  <div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50'>
+                    <div className='w-[421px] h-[451px] bg-white rounded-[15px]'>
+                      <img src={Cancel} className='relative top-[10px] left-[92%] cursor-pointer' />
+                      <div className="relative left-[158px] top-[36px]">
+                        <NavLink to={"/AddBeneficiary"}>
+                          <button className="w-[166px] h-[48px] bg-red-600 text-white flex items-center gap-[10px] p-[10px] rounded-[15px]">
+                            <img
+                              src={AddImg}
+                              alt="Add Beneficiary"
+                              className="w-[24px] h-[24px] filter invert"
+                            />
+                            <p className='font-medium text-[14.2px]'>Add beneficiary</p>
+                          </button>
+                        </NavLink>
+                      </div>
+                      <div className="relative w-[331px] h-[50px] top-[60px] left-[43px] flex items-center justify-between">
+                        <input
+                          type="text"
+                          placeholder="search"
+                          className="bg-gray-300 w-[331px] h-[50px] rounded-3xl outline-none py-3 px-8 placeholder:text-gray-500 placeholder:font-normal placeholder:text-[18px]"
+                        />
+                        <img
+                          src={Search}
+                          alt="search"
+                          className="absolute right-4 top-1/2 transform -translate-y-1/2 w-7 h-7"
+                        />
+                      </div>
+                      <div className='w-[299px] h-[194px] gap-[22px] relative top-[90px] left-[53px]'>
+                        <div className='w-[240px] h-[50px]'>
+                          <NavLink to={'/Layout'}>
+                            <div className='flex items-center justify-between flex-row mb-5'>
+                              <img
+                                className='w-[50px] h-[50px] rounded-full'
+                                src="https://s3-alpha-sig.figma.com/img/aa70/8515/daf1b5623b901a312c8498f653322aca?Expires=1731888000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=kIPfjHA27ueAhfz-1NrV-NDtOZ~1ELJuwXHaviDbdij-0blHq2vdSiOJcyrO4r2N4jlmQpYAliWXGehQggCjbdg9iyc8HVx6oU~9LQ9snGemaa4MrENt~3JJXY0DM8dYIisWKMPvv~qBWAbsaffCLn81xMUp0XCJgMJGbQGiwQA83XKtcBBPi5KYgaFpWbvYFxuYxuZr3I5cYhjnErn9LJf73HwDnMhGtxngMw3GjZlr-qRp2EtIfG8xkwyL4BMO~I5dDyt65YXIdEy3UD2PAV~JSoog5d6U2di5UDK6~1ybBICXBZfhd03wiZPCxm8CJj0tKypY7kXv~90bHViBoQ__" />
+                              <h2 className='h-[27px] font-normal text-[18px] ml-3 whitespace-nowrap'>Musa Ibrahim Imam</h2>
+                            </div>
+                          </NavLink>
+                          <div className='flex items-center justify-between flex-row mb-5'>
+                            <img
+                              className='w-[50px] h-[50px] rounded-full'
+                              src="https://s3-alpha-sig.figma.com/img/0a6f/2013/b40e332e46a28147c6d83447a8f24098?Expires=1731888000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ejhmUYdeEDAemTFDOWyTv263bW02K-tmHtqUX7VwcfPTsRoporyLry0ylRbmvanTQFMxu-3fit4hAFIRkDy4dtB-1OMylzN28mLFJ62V5mZ2--pVDkK6pzzXMV8DA8B29op2IY7Lxz6ieXB94Xlg2c5jgaKYr6~vHHxbH3Vi~abx2XDhjnC~xNjJJwOz5jVKScVDtW0DmqVVfNKBOwUd7JjoOOq67bFGcqKtK2qbyBfC9iutvT4IG~QZ80QbeGDqjBNaAJwwSuJj-ilLXROh0OBoBIqX-igUiRcLOpoDtnl56dOYZPr26pHZ~Wba2HlSa4ob1ZlxTsti6WJdkTeung__" />
+                            <h2 className='h-[27px] font-normal text-[18px] whitespace-nowrap ml-3'>Aisha Shehu Muhammad </h2>
+                          </div>
+                          <div className='flex items-center justify-between flex-row'>
+                            <img
+                              className='w-[50px] h-[50px] rounded-full'
+                              src="https://s3-alpha-sig.figma.com/img/b36a/886d/a72cb9e62e271a74d3e1bbf8e89e7746?Expires=1731888000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=W6uHgofXXBy0NfWboM4Jxf7EK0-ZKcnZXx4hqgUM8EDfVlKeLPOBc2XqFrkY5VNYeCMZMhXRcpVktxXq8tNeSZN79QR4krHHjUa~v9bXnmUJpJAL1SrtMPPX9Phk5JKTkum-jJTApvEYiH~CK2W4WIgUcF0~oMJVddGEKuJL-48vucSC5o9JhMz29nCf3vZJmx~IagnCo36KX6ua0htT6aFZ~7tyluE8r5Ov~4XdP2ClqU4K84bj2sQmm9dKwqdu0QCmLxLPSTG5Ox0HZJTvBrV~wHBmPT035VYx726jr6Dwz7hAflRmoSSiYuSc-7XyvsdDqopFgZAphMjpv~3l~Q__" />
+                            <h2 className='h-[27px] font-normal text-[18px] ml-3 whitespace-nowrap'>Ibrahim Adamu ISah</h2>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )
+              }
+            </div>
+
             <div className="bg-gray-100 w-[410px] h-[80px] rounded-[10px] py-2 px-[24px] gap-[10px] mb-10">
-              <label className='block text-base font-medium text-gray-500'>Recipients gets</label>
+              <label className='block text-base font-medium text-gray-500'>Recipient gets</label>
               <div className="flex items-center">
-                <input type="number" className='bg-transparent outline-none rounded-lg p-2 w-[300px] placeholder-black placeholder:font-medium placeholder:text-xl' placeholder="850,000" />
-                <img src={Flag} className='w-[20px] h-[20px] mr-[4px]' /><select className='border-none font-normal text-[18px] outline-none bg-transparent w-24'>
-                  <option>NGN</option>
+                <input
+                  type="number"
+                  name="receiveAmount"
+                  value={formData.receiveAmount}
+                  onChange={handleInputChange}
+                  className='bg-transparent outline-none rounded-lg p-2 w-[300px] placeholder-black placeholder:font-medium placeholder:text-xl'
+                  placeholder="850,000"
+                />
+                <img src={Flag} className='w-[20px] h-[20px] mr-[4px]' />
+                <select className='border-none font-normal text-[18px] outline-none bg-transparent w-24' >
+                  <option>{formData.currencyReceive}</option>
                 </select>
               </div>
             </div>
-
 
             <div className='w-[513px] h-[63px] gap-[15px] mb-10 mt-12'>
               <div className='flex justify-between w-[402px] h-7 mb-3'>
@@ -206,7 +300,7 @@ const Home = () => {
                     <p className='text-gray-600 ml-6'>Rate</p>
                   </div>
                 </div>
-                <span className='w-[124px] h-7 font-normal text-[16px]' >1 UK = 1700 NGN</span>
+                <span className='w-[124px] h-7 font-normal text-[16px]'>{formData.rate}</span>
               </div>
 
               <div className='flex justify-between w-[515px] h-7'>
@@ -216,106 +310,22 @@ const Home = () => {
                     <p className='text-gray-600 ml-6'>Charges</p>
                   </div>
                 </div>
-                <span className='w-[124px] h-7 font-normal text-[16px]'>0</span>
+                <span className='w-[124px] h-7 font-normal text-[16px]'>{formData.charges}</span>
               </div>
             </div>
 
             <button
-              onClick={handleOverlayToggle}
+              onClick={
+                () => {
+                  handleOverlayToggle()
+                }
+              }
               className="bg-red-600 text-white rounded-[10px] py-[16px] px-[50px] w-[410px] h-[62px] gap-[10px] flex items-center justify-center">
               Send <img src={Send} className='filter invert' />
             </button>
           </div>
         </div>
-      </div> */}
-
-
-<div className="flex justify-end absolute left-[800px] top-[130px] p-4">
-      <div className="bg-white rounded-lg shadow-xl p-6 w-[438px] h-[760px]">
-        <h2 className="w-[220px] h-11 absolute top-9 left-40 font-medium text-[23px]">Make a Transfer</h2>
-        <div className='w-[532px] h-[700px] absolute top-[120px] left-[31px] gap-[32px]'>
-          <div className="bg-gray-100 w-[410px] h-[80px] rounded-[10px] py-2 px-[24px] gap-[10px] mb-10">
-            <label className='block text-base font-medium text-gray-500'>You send</label>
-            <div className="flex items-center">
-              <input
-                type="number"
-                name="sendAmount"
-                value={formData.sendAmount}
-                onChange={handleInputChange}
-                className='bg-transparent outline-none rounded-lg p-2 w-[300px] placeholder-black placeholder:font-medium placeholder:text-xl'
-                placeholder="500"
-              />
-              <img src={UK} className='w-[20px] h-[20px] mr-[4px]' />
-              <select className='border-none font-normal text-[18px] outline-none bg-transparent w-20' >
-                <option>{formData.currencySend}</option>
-              </select>
-            </div>
-          </div>
-
-          <div className="bg-gray-100 w-[410px] h-[80px] rounded-[10px] py-3 px-[24px] gap-[10px] mb-10">
-            <label className='block text-base font-medium text-gray-500'>Payment method</label>
-            <select
-              name="paymentMethod"
-              value={formData.paymentMethod}
-              onChange={handleInputChange}
-              className='border-none text-[18px] outline-none text-xl font-medium w-[365px] h-[27px] bg-transparent'
-            >
-              <option>Bank transfer</option>
-            </select>
-          </div>
-
-          <div className="bg-gray-100 w-[410px] h-[80px] rounded-[10px] py-2 px-[24px] gap-[10px] mb-10">
-            <label className='block text-base font-medium text-gray-500'>Recipient gets</label>
-            <div className="flex items-center">
-              <input
-                type="number"
-                name="receiveAmount"
-                value={formData.receiveAmount}
-                onChange={handleInputChange}
-                className='bg-transparent outline-none rounded-lg p-2 w-[300px] placeholder-black placeholder:font-medium placeholder:text-xl'
-                placeholder="850,000"
-              />
-              <img src={Flag} className='w-[20px] h-[20px] mr-[4px]' />
-              <select className='border-none font-normal text-[18px] outline-none bg-transparent w-24' >
-                <option>{formData.currencyReceive}</option>
-              </select>
-            </div>
-          </div>
-
-          <div className='w-[513px] h-[63px] gap-[15px] mb-10 mt-12'>
-            <div className='flex justify-between w-[402px] h-7 mb-3'>
-              <div className='h-[24px] gap-[16px]'>
-                <div className='flex items-center w-20 justify-between'>
-                  <img src={RedCircle} />
-                  <p className='text-gray-600 ml-6'>Rate</p>
-                </div>
-              </div>
-              <span className='w-[124px] h-7 font-normal text-[16px]'>{formData.rate}</span>
-            </div>
-
-            <div className='flex justify-between w-[515px] h-7'>
-              <div className='h-[24px] gap-[16px]'>
-                <div className='flex items-center w-20 justify-between'>
-                  <img src={RedCircle} />
-                  <p className='text-gray-600 ml-6'>Charges</p>
-                </div>
-              </div>
-              <span className='w-[124px] h-7 font-normal text-[16px]'>{formData.charges}</span>
-            </div>
-          </div>
-
-          <button
-            onClick={
-              () => {
-                handleOverlayToggle()
-              }
-            }
-            className="bg-red-600 text-white rounded-[10px] py-[16px] px-[50px] w-[410px] h-[62px] gap-[10px] flex items-center justify-center">
-            Send <img src={Send} className='filter invert' />
-          </button>
-        </div>
       </div>
-    </div>
 
       {/*ConfirmForm OverLay */}
       {
@@ -378,9 +388,9 @@ const Home = () => {
             </div>
 
             {/* Proceed Button */}
-            <button 
-            onClick={handleFormSubmit}
-            className="bg-red-600 text-white font-semibold text-[24px] py-[16px] px-[50px] w-[320px] h-[68px] rounded-[10px] ml-28 mt-11">Send now</button>
+            <button
+              onClick={handleFormSubmit}
+              className="bg-red-600 text-white font-semibold text-[24px] py-[16px] px-[50px] w-[320px] h-[68px] rounded-[10px] ml-28 mt-11">Send now</button>
           </div>
         </div>
       )}
