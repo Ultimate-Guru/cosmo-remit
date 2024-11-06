@@ -73,8 +73,10 @@ const SignUp = () => {
     if (Object.keys(validationErrors).length === 0) {
       axios.post('http://localhost:8000/users', formData)
         .then(result => {
-          window.alert('Signed Up Successfully')
-          navigate('/VerifyEmail');
+          window.alert('Signed Up Successfully');
+
+          // Pass only email to VerifyEmail page
+          navigate('/VerifyEmail', { state: { email: formData.Email } });
         })
         .catch(err => console.log(err)
         )
@@ -141,7 +143,7 @@ const SignUp = () => {
         {/* Sign up form */}
         <div className="text-center ml-10">
           <h3 className="font-semibold mb-2 text-2xl h-10">Sign up</h3>
-          <p className="text-gray-400 mb-4 md:mb-6 font-medium text-xs">
+          <p className="text-gray-400 mb-4 md:mb-6 font-medium text-[11.9px]">
             Please fill in your name as it appears on your official documents
             and government IDs.
             <p>Already have an account?{" "}

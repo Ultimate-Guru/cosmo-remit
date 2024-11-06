@@ -130,12 +130,13 @@ const SignIn = () => {
             />
           </div>
 
-          <button
-            type="submit"
-            className="mt-6 bg-red-600 text-white p-2 rounded w-full hover:bg-red-700"
-          >
-            Sign in
-          </button>
+          <NavLink to={'/Layout'}>
+            <button
+              type="submit"
+              className="mt-6 bg-red-600 text-white p-2 rounded w-full hover:bg-red-700">
+              Sign in
+            </button>
+          </NavLink>
 
           <p className="text-center m-5">
             <NavLink to={'/ForgotPassword'} className="mt-4 text-muted-foreground">Forgot password?</NavLink>

@@ -3,10 +3,14 @@
 import React from 'react';
 import VerifyNav from '../assets/img/VerifyNav.png';
 import VerifyImg from '../assets/img/VerifyEmail.png';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const VerifyEmail = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // To access the email passed from the sign up page
+  const email = location.state?.email;
 
   // Function to handle navigation when the Next button is clicked
   const handleNext = () => {
@@ -20,7 +24,7 @@ const VerifyEmail = () => {
       </div>
       <img src={VerifyImg} alt="Verify Email" className='mb-7 max-w-full h-64' />
       <div className="text-center mb-6">
-        <p className='font-medium'>We've sent an email to you <span className="font-extrabold">gurumini@gmail.com</span></p>
+        <p className='font-medium'>We've sent an email to you <span className="font-extrabold">{email}</span></p>
         <p className='font-medium'>Please check your inbox to verify.</p>
       </div>
       <button
