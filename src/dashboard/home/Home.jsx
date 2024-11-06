@@ -246,7 +246,7 @@ const Home = () => {
                       </div>
                       <div className='w-[299px] h-[194px] gap-[22px] relative top-[90px] left-[53px]'>
                         <div className='w-[240px] h-[50px]'>
-                          <NavLink to={'/Layout'}>
+                          <NavLink to={'/Layout'} onChange={handleInputChange}>
                             <div className='flex items-center justify-between flex-row mb-5'>
                               <img
                                 className='w-[50px] h-[50px] rounded-full'

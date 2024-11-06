@@ -19,7 +19,7 @@ const AddBeneficiary = () => {
             </div>
 
             {/* Page Title */}
-            <h1 className='font-semibold text-4xl text-center mt-10'>
+            <h1 className='font-semibold text-4xl mt-10 ml-20'>
                 Add a beneficiary
             </h1>
 
@@ -37,7 +37,7 @@ const AddBeneficiary = () => {
                         <label className='block font-normal text-xl mb-2 text-gray-800'>Account name</label>
                         <input
                             type='text'
-                            className='outline-none h-[52px] w-[350px] rounded-[10px] bg-gray-200'
+                            className='outline-none h-[52px] w-[350px] rounded-[10px] bg-gray-200 p-3'
                         />
                     </div>
 
@@ -45,7 +45,7 @@ const AddBeneficiary = () => {
                     <div className='ml-10'>
                         <label className='block font-normal text-xl mb-2 text-gray-800'>Bank</label>
                         <select
-                           className='h-[52px] w-[350px] rounded-[10px] bg-gray-200 outline-none text-gray-800 font-normal'>
+                           className='h-[52px] w-[350px] p-3 rounded-[10px] bg-gray-200 outline-none text-gray-800 font-normal'>
                             <option value="" disabled selected>-select-</option>
                             {/* Bank options to be added here */}
                         </select>
@@ -56,7 +56,7 @@ const AddBeneficiary = () => {
                         <label className='block font-normal text-xl mb-2 text-gray-800'>Account number</label>
                         <input
                             type='text'
-                            className='outline-none h-[52px] w-[350px] rounded-[10px] bg-gray-200'
+                            className='outline-none h-[52px] w-[350px] rounded-[10px] bg-gray-200 p-3'
                         />
                     </div>
 
@@ -65,7 +65,7 @@ const AddBeneficiary = () => {
                         <label className='block font-normal text-xl mb-2 text-gray-800'>Bank location</label>
                         <input
                             type='text'
-                            className='outline-none h-[52px] w-[350px] rounded-[10px] bg-gray-200'
+                            className='outline-none h-[52px] w-[350px] rounded-[10px] bg-gray-200 p-3'
                         />
                     </div>
                 </div>
