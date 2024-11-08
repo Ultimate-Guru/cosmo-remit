@@ -7,6 +7,7 @@ import Profile from '../profile/Profile'
 import Limits from '../accountlimits/Limits'
 import Home from '../home/Home'
 import Beneficiary from "../beneficiaryList/Beneficiary";
+import Transaction from '../transactionHistory/Transactions'
 
 import { FaHome, FaHistory, FaUserFriends, FaShieldAlt, FaUser, } from "react-icons/fa";
 
@@ -15,7 +16,7 @@ const Sidebar = () => {
 
   const menuItems = [
     { name: "Home", icon: <FaHome />, content1: <Home /> },
-    { name: "Transaction History", icon: <FaHistory /> },
+    { name: "Transaction History", icon: <FaHistory />, content: <Transaction /> },
     { name: "Beneficiary", icon: <FaUserFriends />, content: <Beneficiary /> },
     { name: "Account Limits", icon: <FaShieldAlt />, content: <Limits /> },
     { name: "Profile", icon: <FaUser />, content: <Profile /> }
