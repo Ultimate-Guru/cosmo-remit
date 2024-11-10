@@ -206,6 +206,9 @@ const Home = () => {
                 className='border-none text-[18px] outline-none text-xl font-medium w-[365px] h-[27px] bg-transparent'
               >
                 <option>Bank transfer</option>
+                <option>Credit cards</option>
+                <option>Debit cards</option>
+                <option>Prepaid cards</option>
               </select>
             </div>
 

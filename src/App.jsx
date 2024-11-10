@@ -34,6 +34,7 @@ import Profile from "./dashboard/profile/Profile";
 import Notice from "./dashboard/home/Notice";
 import Successful from "./dashboard/home/Successful";
 import Receiver from './dashboard/home/Receiver'
+import ReviewPage from "./dashboard/home/ReviewPage";
 
 const App = () => {
   return (
@@ -76,6 +77,7 @@ const App = () => {
         <Route path="/Receiver" element={<Receiver />}/>
         <Route path="/Notice" element={<Notice />} />
         <Route path="/Successful" element={<Successful />} />
+        <Route path="ReviewPage" element={<ReviewPage />} />
 
         <Route path="/Transactions" element={<Transactions/>}/>   
 
