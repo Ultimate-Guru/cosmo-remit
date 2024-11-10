@@ -54,12 +54,12 @@ const Transact = () => {
             value={digit}
             onChange={(e) => handleChange(e, index)}
             onKeyDown={(e) => handleKeyDown(e, index)} // Handle backspace
-            className="w-16 h-16 text-2xl text-center bg-gray-400 rounded outline-none"
+            className="w-[93px] h-[93px] text-2xl text-center bg-gray-200 rounded outline-none"
             aria-label={`Pin digit ${index + 1}`} // Accessibility label
           />
         ))}
       </div>
-      <button type="button" className="bg-red-600 text-white font-semibold rounded py-2 md:w-48" onClick={handleNavigate}>Submit</button>
+      <button type="button" className="py-[16px] px-[50px] w-[301px] h-[68px] rounded-[10px] gap-[10px] bg-red-600 text-white font-semibold text-[24px]" onClick={handleNavigate}>Submit</button>
     </div>
   );
 };
