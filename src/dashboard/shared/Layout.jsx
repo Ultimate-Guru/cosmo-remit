@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import PImg from '../../assets/img/brock-wegner.png'
 import Drop from '../../assets/img/iconamoon_arrow-up-2-duotone.png'
 import Bell from '../../assets/img/Group 28.png'
@@ -33,7 +34,7 @@ const Sidebar = () => {
 
           {/* Logo Text */}
           <div className='w-[117px] h-[72px] ml-12'>
-            <h1 className='font-bold text-[48px] fixed'>Logo</h1>
+            <NavLink to={'/'}><h1 className='font-bold text-[48px] fixed'>Logo</h1></NavLink>
           </div>
 
           {/* Sidebar */}

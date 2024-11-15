@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */  
 import React, { useEffect } from 'react';  
 import ReviewImg from '../../assets/img/Frame 317.png';  
-import HomeArrow from '../../assets/img/Frame 257.png';  
+import HomeArrow from '../../assets/img/Frame 257.png';
 import { NavLink, useNavigate } from 'react-router-dom';  
 
 function Review() {  

@@ -1,16 +1,39 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useState } from "react";
 import Search from "../../assets/img/ic_sharp-search.png";
 import AddImg from "../../assets/img/ic_baseline-person-add.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Beneficiary = () => {
+  // Initial list of beneficiaries
+  const [beneficiaries, setBeneficiaries] = useState([
+    { id: 1, name: "John Swead", country: "NGR - Naira" },
+    { id: 2, name: "Jane Doe", country: "USA - Dollar" },
+    { id: 3, name: "Alice Smith", country: "UK - Pound" },
+    { id: 4, name: "Bob Johnson", country: "CAN - Dollar" },
+  ]);
+
+  // Handle delete action
+  const handleDelete = (id) => {
+    const updatedBeneficiaries = beneficiaries.filter(
+      (beneficiary) => beneficiary.id !== id
+    );
+    setBeneficiaries(updatedBeneficiaries);
+  };
+
+  const navigate = useNavigate();
+  const Page = () => {
+    navigate("/ReviewPage");
+  }
+
   return (
     <div className="p-32">
       <div className="flex justify-between items-center p-9 w-[1000px] ml-[90px]">
         {/* Title and Search */}
         <div className="flex flex-col gap-5 w-[466px] h-[96.16px] absolute left-[280px]">
-          <h1 className="text-[26px] h-11 w-[466.59px] font-medium text-black">Beneficiary</h1>
+          <h1 className="text-[26px] h-11 w-[466.59px] font-medium text-black">
+            Beneficiary
+          </h1>
           <div className="relative">
             <input
               type="text"
@@ -48,25 +71,28 @@ const Beneficiary = () => {
         </div>
 
         {/* Beneficiary Rows */}
-        {Array(4)
-          .fill(null)
-          .map((_, index) => (
-            <div
-              key={index}
-              className="bg-gray-200 w-[900px] h-[62px] rounded-[15px] mb-10 flex justify-between items-center px-6"
-            >
-              <div className="flex gap-16">
-                <h1 className="text-black text-lg font-normal">John Swead</h1>
-                <h1 className="text-black text-lg font-normal ml-44">NGR - Naira</h1>
-              </div>
-              <div className="flex gap-12 mr-10">
-                <button className="text-black text-lg font-normal">View</button>
-                <button className="text-red-600 text-lg font-normal">
-                  Delete
-                </button>
-              </div>
+        {beneficiaries.map((beneficiary) => (
+          <div
+            key={beneficiary.id}
+            className="bg-gray-200 w-[900px] h-[62px] rounded-[15px] mb-10 flex justify-between items-center px-6"
+          >
+            <div className="flex gap-16">
+              <h1 className="text-black text-lg font-normal">{beneficiary.name}</h1>
+              <h1 className="text-black text-lg font-normal ml-44">
+                {beneficiary.country}
+              </h1>
             </div>
-          ))}
+            <div className="flex gap-12 mr-10">
+              <button className="text-black text-lg font-normal" onClick={Page}>View</button>
+              <button
+                className="text-red-600 text-lg font-normal"
+                onClick={() => handleDelete(beneficiary.id)}
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
