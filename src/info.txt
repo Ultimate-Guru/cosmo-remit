@@ -1,0 +1,44 @@
+/* eslint-disable no-unused-vars */
+import React from "react";
+import bgCoverImg from "../../assets/img/Vector.png";
+import FormImg from "../../assets/img/Frame 256.png";
+
+const Hero = () => {
+  const bgImage = {
+    backgroundImage: `url(${bgCoverImg})`,
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    height: "694px",
+    width: "100%",
+  };
+
+  return (
+    <div style={bgImage}>
+      <div className="flex flex-col lg:flex-row justify-between items-center h-full px-6 lg:px-20">
+        {/* Left Section */}
+        <div className="mt-10 lg:mt-0">
+          <h1 className="text-[40px] lg:text-7xl leading-tight font-bold text-white">
+            Send Money <br /> <span className="text-red-600">without</span>{" "}
+            Borders
+          </h1>
+          <p className="text-[10px] lg:text-lg leading-5 lg:leading-7 font-normal text-gray-400 mt-5">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+            eros <br className="hidden lg:block" /> tortor, consectetur eget
+            libero non, condimentum sagittis mauris. Ut <br className="hidden lg:block" />{" "}
+            molestie euismod neque. Proin eget odio
+          </p>
+        </div>
+
+        {/* Right Section */}
+        <img
+          src={FormImg}
+          className="w-[300px] lg:w-[470px] mt-6 lg:mt-10"
+          alt="Form Illustration"
+        />
+      </div>
+    </div>
+  );
+};
+
+export default Hero;

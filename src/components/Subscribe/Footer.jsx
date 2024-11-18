@@ -20,7 +20,7 @@ const Footer = () => {
           className=' text-gray-500 py-8 px-16 gap-3 text-2xl font-medium rounded-l-xl w-8/12 text-center mb-12 outline-none' />
 
         <button
-          className='text-white font-medium text-3xl bg-red-600 rounded-r-xl w-64 h-24 gap-3 py-4 px-14'>
+          className='text-white font-medium text-3xl bg-red-600 rounded-xl w-64 h-24 gap-3 py-4 px-14'>
           Subscribe
         </button>
 

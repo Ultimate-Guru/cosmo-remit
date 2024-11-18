@@ -51,7 +51,7 @@ const Navbar = () => {
             >
                 {/* Close Icon */}
                 <div className="flex justify-between items-center p-4">
-                    <h2 className="text-black font-bold text-3xl">Logo</h2>
+                    <h2 className="text-black font-bold text-[24px]">Logo</h2>
                     <AiOutlineClose size={20} className="mr-4 cursor-pointer" onClick={handleNav} />
                 </div>
 
