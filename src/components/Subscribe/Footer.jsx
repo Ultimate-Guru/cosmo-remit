@@ -34,7 +34,7 @@ const Footer = () => {
             style={inputBgStyle}
             type="email"
             name="email"
-            placeholder="Type your email address"
+            placeholder="Type your email"
             className="text-gray-500 py-8 px-16 text-2xl md:text-xl font-medium lg:rounded-l-xl rounded-xl w-full md:w-[600px] outline-none placeholder:text-center"
           />
 
