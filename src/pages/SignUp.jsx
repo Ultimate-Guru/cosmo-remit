@@ -115,7 +115,11 @@ const SignUp = () => {
   return (
     <div className="flex flex-col md:flex-row">
 
-      <div style={BGimage}>
+      {/* Background Image Section */}
+      <div
+        style={BGimage}
+        className="hidden md:block" // Hidden on smaller screens
+      >
         <div className="w-96 h-32 mt-24 text-center">
           <p className="font-medium text-4xl text-gray-300">
             The fastest way to
@@ -123,38 +127,42 @@ const SignUp = () => {
             <span className="text-red-600">send money abroad</span>
           </p>
         </div>
-        <h2 className="w-32 h-20 font-bold text-5xl text-white text-center ml-32 mt-20">Logo</h2>
+        <h2 className="w-32 h-20 font-bold text-5xl text-white text-center ml-32 mt-20">
+          Logo
+        </h2>
       </div>
 
-
-
-      {/* Form beside the image */}
-      <div className="w-full md:w-1/2 p-4 md:p-10 ml-24 mt-[-15px]">
-
-        {/* <div className="h-12">
-        <img src={Logo} className="w-24 ml-[100%] mt-[-20px]" />
-      </div> */}
-
-        {/* Signup steps */}
+      {/* Form Section */}
+      <div
+        className="w-full md:w-1/2 p-4 md:p-10 ml-0 md:ml-24 mt-0 md:mt-[-15px]"
+      >
         <div className="mb-7">
-          <img src={Nav1} />
+          <img
+            src={Nav1}
+            className="hidden md:block" // Hidden on smaller screens
+          />
         </div>
 
-        {/* Sign up form */}
-        <div className="text-center ml-10">
-          <h3 className="font-semibold mb-2 text-2xl h-10">Sign up</h3>
-          <p className="text-gray-400 mb-4 md:mb-6 font-medium text-[11.9px]">
+        <div className="text-center">
+          <h3 className="font-semibold mb-2 text-2xl h-10 hidden md:block">Sign up</h3>
+          <p className="text-gray-400 mb-4 md:mb-6 font-medium text-xs hidden md:block">
             Please fill in your name as it appears on your official documents
             and government IDs.
-            <p>Already have an account?{" "}
+            <p>
+              Already have an account?{" "}
               <span>
-                <NavLink to={'/SignIn'} className="text-red-600 font-medium">Log in here</NavLink>
+                <NavLink
+                  to={"/SignIn"}
+                  className="text-red-600 font-medium"
+                >
+                  Log in here
+                </NavLink>
               </span>
             </p>
           </p>
         </div>
 
-        <form className="flex flex-col md:flex-row justify-between ml-1" onSubmit={handleSubmit}>
+        <form className="flex flex-col md:flex-row justify-between" onSubmit={handleSubmit}>
           {/* Left column inputs */}
           <div className="mb-4 md:mb-0">
             <label className="text-sm text-gray-500 font-medium">First name</label>
@@ -269,19 +277,27 @@ const SignUp = () => {
         <div className="flex flex-row items-center ml-2 w-full">
           <input type="checkbox" className="mr-1" required />
           <p className="font-medium text-[10px] whitespace-nowrap gap-1 inline-flex">
-            I agree to the {" "}
-            <a href="#" className="text-red-600 font-medium">terms</a> & {" "}
-            <a href="#" className="text-red-600 font-medium">conditions</a> and{" "}
-            <a href="#" className="text-red-600 font-medium">privacy policy</a>
+            I agree to the{" "}
+            <a href="#" className="text-red-600 font-medium">
+              terms
+            </a>{" "}
+            &{" "}
+            <a href="#" className="text-red-600 font-medium">
+              conditions
+            </a>{" "}
+            and{" "}
+            <a href="#" className="text-red-600 font-medium">
+              privacy policy
+            </a>
           </p>
           <button
             type="submit"
             onClick={handleSubmit}
-            className="bg-red-600 text-white font-semibold rounded p-2.5 w-52 ml-auto">
+            className="bg-red-600 text-white font-semibold rounded p-2.5 w-52 ml-auto"
+          >
             Next
           </button>
         </div>
-
       </div>
     </div>
   );
