@@ -8,7 +8,7 @@ const Countries = () => {
       <img 
         src={Country} 
         alt="Countries" 
-        className="w-full max-h-[478px] md:min-h-[200px] object-cover" 
+        className="w-full h-auto object-cover"
       />
     </div>
   );
