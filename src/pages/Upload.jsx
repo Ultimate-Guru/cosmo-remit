@@ -85,7 +85,7 @@ const Upload = () => {
 
   return (
     <form onSubmit={handleSubmit} className='flex flex-col items-center justify-center gap-5 py-5 bg-white px-4'>
-      <img src={UploadImg} className='w-7/12' alt="Upload Icon" />
+      <img src={UploadImg} className='w-7/12 hidden md:block' alt="Upload Icon" />
       <img src={UploadTxt} className='mt-8 max-w-full' alt="Upload Text" />
 
       <div className='flex flex-col items-center w-full mt-5'>

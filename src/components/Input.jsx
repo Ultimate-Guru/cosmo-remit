@@ -10,7 +10,7 @@ const Input = ({ type, value, placeholder, name }) => {
         name={name}
         value={value}
         placeholder={placeholder}
-        className="bg-gray-100 rounded h-8 p-2 outline-none w-full"
+        className="bg-gray-100 rounded h-8 p-2 outline-none max-w-full"
       />
     </div>
   )

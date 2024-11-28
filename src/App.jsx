@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/HeroSection/Hero";
@@ -35,6 +35,7 @@ import Notice from "./dashboard/home/Notice";
 import Successful from "./dashboard/home/Successful";
 import Receiver from './dashboard/home/Receiver'
 import ReviewPage from "./dashboard/home/ReviewPage";
+import Dashboard from "./dashcomp/layout/Dashboard";
 
 const App = () => {
   return (
@@ -71,7 +72,9 @@ const App = () => {
         <Route path="/Confirm" element={<Confirm />} />
 
         {/* Dashboard-related Routes */}
-        <Route path="/Layout" element={<Layout />}/>
+        <Route path="/Dashboard" element={<Dashboard /> }/>
+
+        {/* <Route path="/Layout" element={<Layout />}/>
 
         <Route path="/Home" element={<Home />}/>
         <Route path="/Receiver" element={<Receiver />}/>
@@ -91,7 +94,7 @@ const App = () => {
         <Route path="/Residence" element={<Residence />} />
         <Route path="/Funds" element={<Funds />} />
         <Route path="/Review" element={<Review />} />
-        <Route path="/Success" element={<Success />} />
+        <Route path="/Success" element={<Success />} /> */}
 
       </Routes>
     </div>

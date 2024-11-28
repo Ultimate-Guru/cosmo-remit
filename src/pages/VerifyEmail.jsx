@@ -18,21 +18,32 @@ const VerifyEmail = () => {
   };
 
   return (
-    <div className='flex flex-col items-center justify-center bg-white min-h-screen px-4'>
-      <div className="flex flex-row justify-center mb-8 w-full">
-        <img src={VerifyNav} alt="Navigation" className='w-7/12 mt-4' />
-      </div>
-      <img src={VerifyImg} alt="Verify Email" className='mb-7 max-w-full h-64' />
-      <div className="text-center mb-6">
-        <p className='font-medium'>We've sent an email to you <span className="font-extrabold">{email}</span></p>
-        <p className='font-medium'>Please check your inbox to verify.</p>
-      </div>
-      <button
-        className='text-white bg-gray-300 hover:bg-gray-300 font-bold py-4 px-14 rounded-lg w-80 max-w-xs mt-0'
-        onClick={handleNext}>
-        Next
-      </button>
+    <div className="flex flex-col items-center justify-center bg-white min-h-screen px-4">
+    {/* Navigation Image (Visible only on md and above) */}
+    <div className="hidden md:flex justify-center mb-8 w-full">
+      <img src={VerifyNav} alt="Navigation" className="w-7/12 mt-4" />
     </div>
+  
+    {/* Main Verification Image */}
+    <img src={VerifyImg} alt="Verify Email" className="mb-7 max-w-full h-64 object-contain" />
+  
+    {/* Email Verification Text */}
+    <div className="text-center mb-6">
+      <p className="font-medium">
+        We've sent an email to you <span className="font-extrabold">{email || 'your email'}</span>
+      </p>
+      <p className="font-medium">Please check your inbox to verify.</p>
+    </div>
+  
+    {/* Next Button */}
+    <button
+      className="text-white bg-gray-300 hover:bg-gray-400 font-bold py-4 px-14 rounded-lg w-80 max-w-xs mt-0"
+      onClick={handleNext}
+    >
+      Next
+    </button>
+  </div>
+  
   );
 }
 
