@@ -16,7 +16,7 @@ const Successful = () => {
             <div className='text-center w-[470px] h-[54px] text-[18px] font-normal'>
                 <p>
                     Your transfer to Muhammed Ibrahim was successful <br />
-                    <NavLink to={'/'} className='text-red-600 cursor-pointer'>Click here</NavLink> to view transaction details
+                    <NavLink to={'/ReviewPage'} className='text-red-600 cursor-pointer'>Click here</NavLink> to view transaction details
                 </p>
             </div>
 

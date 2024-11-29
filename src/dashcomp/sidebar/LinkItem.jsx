@@ -7,7 +7,7 @@ const LinkItem = ({ href, icon: Icon, text }) => {
         <li>
             <a href={href}
                 className='flex items-center p-2'>
-                <Icon className='mr-5 text-2xl' />
+                <Icon className='mr-5 ml-[-5px] text-2xl' />
                 <span className='flex-1 me-3 text-xl'>{text}</span>
             </a>
         </li>

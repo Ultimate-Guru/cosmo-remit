@@ -72,9 +72,9 @@ const App = () => {
         <Route path="/Confirm" element={<Confirm />} />
 
         {/* Dashboard-related Routes */}
-        <Route path="/Dashboard" element={<Dashboard /> }/>
+        {/* <Route path="/Dashboard" element={<Dashboard /> }/> */}
 
-        {/* <Route path="/Layout" element={<Layout />}/>
+        <Route path="/Layout" element={<Layout />}/>
 
         <Route path="/Home" element={<Home />}/>
         <Route path="/Receiver" element={<Receiver />}/>
@@ -94,7 +94,7 @@ const App = () => {
         <Route path="/Residence" element={<Residence />} />
         <Route path="/Funds" element={<Funds />} />
         <Route path="/Review" element={<Review />} />
-        <Route path="/Success" element={<Success />} /> */}
+        <Route path="/Success" element={<Success />} />
 
       </Routes>
     </div>

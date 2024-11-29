@@ -1,16 +1,17 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
-import PImg from '../../assets/img/brock-wegner.png'
-import Drop from '../../assets/img/iconamoon_arrow-up-2-duotone.png'
-import Bell from '../../assets/img/Group 28.png'
+// import { NavLink } from "react-router-dom";
+// import PImg from '../../assets/img/brock-wegner.png'
+// import Drop from '../../assets/img/iconamoon_arrow-up-2-duotone.png'
+// import Bell from '../../assets/img/Group 28.png'
+import Header from "../../dashcomp/header/Header";
 import Profile from '../profile/Profile'
 import Limits from '../accountlimits/Limits'
 import Home from '../home/Home'
 import Beneficiary from "../beneficiaryList/Beneficiary";
 import Transaction from '../transactionHistory/Transactions'
 
-import { FaHome, FaHistory, FaUserFriends, FaShieldAlt, FaUser, } from "react-icons/fa";
+import { FaHome, FaHistory, FaUserFriends, FaShieldAlt, FaUser } from "react-icons/fa";
 
 const Sidebar = () => {
   const [activeIndex, setActiveIndex] = useState(0); // Manages active list item
@@ -34,11 +35,11 @@ const Sidebar = () => {
 
           {/* Logo Text */}
           <div className='w-[117px] h-[72px] ml-12'>
-            <NavLink to={'/'}><h1 className='font-bold text-[48px] fixed'>Logo</h1></NavLink>
+            {/* <NavLink to={'/'}><h1 className='font-bold text-[48px] fixed'>Logo</h1></NavLink> */}
           </div>
 
           {/* Sidebar */}
-          <div className="flex flex-col w-[249px] h-[370px] gap-6 mt-16 fixed">
+          <aside className="flex flex-col h-full gap-6 mt-16 fixed">
             {menuItems.map((item, index) => (
               <button
                 key={index}
@@ -50,17 +51,18 @@ const Sidebar = () => {
                 {item.name}
               </button>
             ))}
-          </div>
+          </aside>
 
           {/* Navbar */}
-          <nav className="w-[1200px] h-[72px] bg-white fixed left-[249px]">
+          {/* <nav className="w-[1200px] h-[72px] bg-white fixed left-[249px]">
             <div className="inline-flex justify-center items-center flex-row w-[259.36px] h-12 gap-5 absolute left-[650px]">
               <img src={PImg} alt="Profile Img" className="w-12 h-12" />
               <h2 className="font-normal text-[18px] whitespace-nowrap">Kabir Akinola</h2>
               <img src={Drop} alt="Down Img" />
               <img src={Bell} alt="Bell Img" />
             </div>
-          </nav>
+          </nav> */}
+          <Header />
 
           {/* Content Area */}
           <div>
