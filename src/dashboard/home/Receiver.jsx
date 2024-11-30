@@ -55,7 +55,7 @@ const ReviewPage = () => {
     );
 
     const prevpage = () => {
-        navigate('/Layout');
+        navigate('/Dashboard');
     }
 
     const [pin, setPin] = useState(["", "", "", ""]);

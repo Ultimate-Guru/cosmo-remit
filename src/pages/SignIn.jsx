@@ -130,7 +130,7 @@ const SignIn = () => {
             />
           </div>
 
-          <NavLink to={'/Layout'}>
+          <NavLink to={'/Dashboard'}>
             <button
               type="submit"
               className="mt-6 bg-red-600 text-white p-2 rounded w-full hover:bg-red-700">

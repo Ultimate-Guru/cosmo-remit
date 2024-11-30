@@ -20,21 +20,19 @@ import Passport from "./pages/Passport";
 import Resident from "./pages/Resident";
 import Transact from "./pages/Transact";
 import Confirm from "./pages/Confirm";
-import Success from "./dashboard/accountlimits/Success";
-import Review from "./dashboard/accountlimits/Review";
-import Funds from "./dashboard/accountlimits/Funds";
-import Residence from "./dashboard/accountlimits/Residence";
-import Limits from "./dashboard/accountlimits/Limits";
+import Success from "./dashcomp/Success";
+import Review from "./dashcomp/Review";
+import Funds from './dashcomp/Funds'
+import Residence from "./dashcomp/Residence";
 import Layout from "./dashboard/shared/Layout";
 import Home from '../src/dashboard/home/Home'
-import Transactions from '../src/dashboard/transactionHistory/Transactions';
-import Beneficiary from "./dashboard/beneficiaryList/Beneficiary";
-import AddBeneficiary from "./dashboard/beneficiaryList/AddBeneficiary";
-import Profile from "./dashboard/profile/Profile";
+import Beneficiary from "./dashcomp/Beneficiary";
+import AddBeneficiary from "./dashcomp/AddBeneficiary";
+import Profile from "./dashcomp/Profile";
 import Notice from "./dashboard/home/Notice";
 import Successful from "./dashboard/home/Successful";
 import Receiver from './dashboard/home/Receiver'
-import ReviewPage from "./dashboard/home/ReviewPage";
+import ReviewPage from "./dashcomp/ReviewPage";
 import Dashboard from "./dashcomp/layout/Dashboard";
 
 const App = () => {
@@ -82,15 +80,11 @@ const App = () => {
         <Route path="/Successful" element={<Successful />} />
         <Route path="ReviewPage" element={<ReviewPage />} />
 
-        <Route path="/Transactions" element={<Transactions/>}/>   
-
         <Route path="/Beneficiary" element={<Beneficiary />}/>
         <Route path="/AddBeneficiary" element={<AddBeneficiary />}/>
 
         <Route path="/Profile" element={<Profile />}/>
 
-        
-        <Route path="/Limits" element={<Limits />} />
         <Route path="/Residence" element={<Residence />} />
         <Route path="/Funds" element={<Funds />} />
         <Route path="/Review" element={<Review />} />

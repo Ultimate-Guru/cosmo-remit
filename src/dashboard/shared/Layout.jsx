@@ -5,23 +5,23 @@ import React, { useState } from "react";
 // import Drop from '../../assets/img/iconamoon_arrow-up-2-duotone.png'
 // import Bell from '../../assets/img/Group 28.png'
 import Header from "../../dashcomp/header/Header";
-import Profile from '../profile/Profile'
-import Limits from '../accountlimits/Limits'
+// import Profile from '../profile/Profile'
+// import Limits from '../accountlimits/Limits'
 import Home from '../home/Home'
-import Beneficiary from "../beneficiaryList/Beneficiary";
-import Transaction from '../transactionHistory/Transactions'
+// import Beneficiary from "../beneficiaryList/Beneficiary";
+// import Transaction from '../transactionHistory/Transactions'
 
-import { FaHome, FaHistory, FaUserFriends, FaShieldAlt, FaUser } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 
 const Sidebar = () => {
   const [activeIndex, setActiveIndex] = useState(0); // Manages active list item
 
   const menuItems = [
     { name: "Home", icon: <FaHome />, content1: <Home /> },
-    { name: "Transaction History", icon: <FaHistory />, content: <Transaction /> },
-    { name: "Beneficiary", icon: <FaUserFriends />, content: <Beneficiary /> },
-    { name: "Account Limits", icon: <FaShieldAlt />, content: <Limits /> },
-    { name: "Profile", icon: <FaUser />, content: <Profile /> }
+    // { name: "Transaction History", icon: <FaHistory />, content: <Transaction /> },
+    // { name: "Beneficiary", icon: <FaUserFriends />, content: <Beneficiary /> },
+    // { name: "Account Limits", icon: <FaShieldAlt />, content: <Limits /> },
+    // { name: "Profile", icon: <FaUser />, content: <Profile /> }
   ];
 
   const handleClick = (index) => {

@@ -36,7 +36,7 @@ const Header = ({ toggleSidebar }) => {
           {/* Left Section: Logo and Sidebar Toggle */}
           <div className="flex items-center justify-start rtl:justify-end">
             <button
-              className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+              className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
               onClick={toggleSidebar}>
               <HiOutlineMenuAlt2 className="text-2xl" />
             </button>

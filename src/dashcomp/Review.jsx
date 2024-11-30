@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */  
 import React, { useEffect } from 'react';  
-import ReviewImg from '../../assets/img/Frame 317.png';  
-import HomeArrow from '../../assets/img/Frame 257.png';
+import ReviewImg from '../assets/img/Frame 317.png';  
+import HomeArrow from '../assets/img/Frame 257.png';
 import { NavLink, useNavigate } from 'react-router-dom';  
 
 function Review() {  
@@ -15,13 +15,13 @@ function Review() {
         
         // Cleanup the timer on component unmount  
         return () => clearTimeout(timer);  
-    }, [navigate]);  
+    }, [navigate]);
 
     return (  
         <div className='h-screen flex flex-col items-center justify-center p-6 relative'>  
             {/* Go home link */}  
             <div className="absolute top-5 left-5 flex items-center space-x-2 cursor-pointer">  
-              <NavLink to={'/Layout'}> <img src={HomeArrow} alt="Go back"  /> </NavLink>
+              <NavLink to={'/Dashboard'}> <img src={HomeArrow} alt="Go back"  /> </NavLink>
             </div>  
 
             {/* Review Image */}  
