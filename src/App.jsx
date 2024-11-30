@@ -72,7 +72,7 @@ const App = () => {
         <Route path="/Confirm" element={<Confirm />} />
 
         {/* Dashboard-related Routes */}
-        {/* <Route path="/Dashboard" element={<Dashboard /> }/> */}
+        <Route path="/Dashboard" element={<Dashboard /> }/>
 
         <Route path="/Layout" element={<Layout />}/>
 
