@@ -15,6 +15,10 @@ import User3 from '../assets/img/user03.png'
 
 const Home = () => {
 
+    const [showConfirmForm, setShowConfirmForm] = useState(false);
+    const [TransactForm, setTransactForm] = useState(false);
+    const [ShowBene, setShowBene] = useState(false);
+
     const [formData, setFormData] = useState({
         sendAmount: '',
         paymentMethod: 'Bank transfer',
@@ -38,9 +42,6 @@ const Home = () => {
         navigate('/Receiver', { state: formData });
     };
 
-    const [showConfirmForm, setShowConfirmForm] = useState(false);
-    const [TransactForm, setTransactForm] = useState(false);
-    const [ShowBene, setShowBene] = useState(false);
 
     function handleOverlayToggle() {
         setShowConfirmForm(!showConfirmForm);
@@ -58,128 +59,124 @@ const Home = () => {
         setShowBene(!ShowBene);
     }
 
-    return (
-        <div>
+    const transfers = [
+        {
+            userImage: User1,
+            userName: "Elizabeth Moses",
+            amount: "NGN650,000",
+            status: "Successful"
+        },
+        {
+            userImage: User2,
+            userName: "Aisha Ibrahim",
+            amount: "NGN850,000",
+            status: "Successful"
+        },
+        {
+            userImage: User3,
+            userName: "Murtala Muktar",
+            amount: "NGN850,000",
+            status: "Successful"
+        }
+    ];
 
-            <div className="text-left font-medium text-[26px] absolute left-[290px] top-32 w-[125px]">
+    return (
+        <div className='lg:h-screen min-h-screen'>
+
+            <div className="hidden lg:block text-left font-medium text-[26px] absolute left-[290px] top-32">
                 Welcome
             </div>
 
-            <div
-                className="bg-white rounded-[15px] p-5 flex flex-col gap-2.5 items-start justify-start w-[239px] h-[146px] absolute left-[275px] top-[197px]"
-                style={{ boxShadow: "rgba(0, 0, 0, 0.1)" }}>
-                <div className="flex flex-col gap-5 items-start justify-start shrink-0 w-[142px] relative">
-                    <div className="flex flex-row gap-2.5 items-center justify-start shrink-0 relative">
-                        <div className='bg-red-600 flex rounded-[19px]'>
-                            <img src={Img} className='w-[38px] h-[38px] p-2 filter brightness-0 invert' />
+            <div className="flex flex-wrap justify-center gap-5 lg:mt-36 lg:ml-[-13rem] mt-24">
+                <div
+                    className="bg-white rounded-[15px] p-5 flex flex-col gap-2.5 items-start justify-start w-full md:w-[239px] h-[146px]"
+                    style={{ boxShadow: "rgba(0, 0, 0, 0.1)" }}>
+                    <div className="flex flex-col gap-5 items-start justify-start w-full relative">
+                        <div className="flex flex-row gap-2.5 items-center justify-start relative">
+                            <div className='bg-red-600 flex rounded-[19px]'>
+                                <img src={Img} className='w-[38px] h-[38px] p-2 filter brightness-0 invert' />
+                            </div>
+                            <div className="text-[24px] font-semibold">
+                                20{" "}
+                            </div>
                         </div>
-                        <div className="text-[24px] font-semibold">
-                            20{" "}
+                        <div className="text-lg font-normal">
+                            Transfer Made{" "}
                         </div>
                     </div>
-                    <div className="text-lg font-normal">
-                        Transfer Made{" "}
+                </div>
+
+                <div
+                    className="bg-white rounded-[15px] p-5 flex flex-col gap-2.5 items-start justify-start w-full md:w-[239px] h-[146px]"
+                    style={{ boxShadow: "rgba(0, 0, 0, 0.1)" }}>
+                    <div className="flex flex-col gap-5 items-start justify-start w-full relative">
+                        <div className="flex flex-row gap-2.5 items-center justify-start relative">
+                            <div className='bg-red-600 flex rounded-[19px]'>
+                                <img src={Img} className='w-[38px] h-[38px] p-2 filter brightness-0 invert' />
+                            </div>
+                            <div className="text-[24px] font-semibold">
+                                5{" "}
+                            </div>
+                        </div>
+                        <div className="text-lg font-normal">
+                            Beneficiaries{" "}
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div
-                className="bg-white rounded-[15px] p-5 flex flex-col gap-2.5 items-start justify-start w-[239px] h-[146px] absolute left-[545px] top-[197px]"
-                style={{ boxShadow: "rgba(0, 0, 0, 0.1)" }}>
-                <div className="flex flex-col gap-5 items-start justify-start shrink-0 w-[142px] relative">
-                    <div className="flex flex-row gap-2.5 items-center justify-start shrink-0 relative">
-                        <div className='bg-red-600 flex rounded-[19px]'>
-                            <img src={Img} className='w-[38px] h-[38px] p-2 filter brightness-0 invert' />
-                        </div>
-                        <div className="text-[24px] font-semibold">
-                            5{" "}
-                        </div>
-                    </div>
-                    <div className="text-lg font-normal">
-                        Beneficiaries{" "}
-                    </div>
-                </div>
-            </div>
-
-            <div className='w-[518px] h-[315px] absolute top-[370px] left-[270px] rounded-2xl py-[33px] px-[17px] bg-white shadow-2xl'>
-                <div className='w-[487px] h-[252px] gap-[26px]'>
-                    <h2 className='font-medium text-[20px]'>Recent transfers</h2>
-                    <div className='w-[487px] h-[196px] gap-6 mt-6'>
-                        <NavLink to={'/'}>
-                            <div className='w-[487px] h-[52px] rounded-[15px] py-3 px-5 gap-3 bg-green-100 mb-5'>
-                                <div className='w-[462px] h-9 flex flex-row gap-[26px] items-center justify-start shrink-0'>
-                                    <div className='flex flex-row items-center justify-start gap-[15px]'>
-                                        <img src={User1} className='w-9 h-9 rounded-full' />
-                                        <p className='font-normal text-base w-32 h-6'>Elizabeth Moses</p>
-                                        <div className='w-[122px] h-[21px] gap-3 flex flex-row'>
-                                            <img src={Flag} className='w-5 h-5' />
-                                            <p className='font-normal text-base w-[94px] h-6'>NGN650,000</p>
-                                        </div>
-                                        <p className='font-normal text-base w-[75px] h-6' style={{ color: 'rgba(75, 181, 67, 1)' }}>Successful</p>
-                                        <p className='w-[29px] h-[25px] text-red-600'>View</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </NavLink>
-                        <NavLink to={'/'}>
-                            <div className='w-[487px] h-[52px] rounded-[15px] py-3 px-5 gap-3 bg-green-100 mb-5'>
-                                <div className='w-[462px] h-9 flex flex-row gap-[26px] items-center justify-start shrink-0'>
-                                    <div className='flex flex-row items-center justify-start gap-[15px]'>
-                                        <img src={User2} className='w-9 h-9 rounded-full' />
-                                        <p className='font-normal text-base w-97 h-6'>Aisha Ibrahim</p>
-                                        <div className='w-[122px] h-[21px] gap-3 flex flex-row'>
-                                            <img src={Flag} className='w-5 h-5' />
-                                            <p className='font-normal text-base w-[94px] h-6'>NGN850,000</p>
-                                        </div>
-                                        <p className='font-normal text-base w-[75px] h-6' style={{ color: 'rgba(75, 181, 67, 1)' }}>Successful</p>
-                                        <p className='w-[29px] h-[25px] text-red-600'>View</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </NavLink>
-                        <NavLink to={'/'}>
-                            <div className='w-[487px] h-[52px] rounded-[15px] py-3 px-5 gap-3 bg-green-100 mb-5'>
-                                <div className='w-[462px] h-9 flex flex-row gap-[26px] items-center justify-start shrink-0'>
-                                    <div className='flex flex-row items-center justify-start gap-[15px]'>
-                                        <img src={User3} className='w-9 h-9 rounded-full' />
-                                        <p className='font-normal text-base w-[121px] h-6'>Murtala Muktar </p>
-                                        <div className='w-[122px] h-[21px] gap-3 flex flex-row'>
-                                            <img src={Flag} className='w-5 h-5' />
-                                            <p className='font-normal text-base w-[94px] h-6'>NGN850,000</p>
-                                        </div>
-                                        <p className='font-normal text-base w-[75px] h-6' style={{ color: 'rgba(75, 181, 67, 1)' }}>Successful</p>
-                                        <p className='w-[29px] h-[25px] text-red-600'>View</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </NavLink>
-                    </div>
-                </div>
-            </div>
-
-            <div className='w-[518px] h-[192px] absolute top-[712px] left-[270px] rounded-[15px] p-7 gap-3 bg-white shadow-2xl'>
-                <div className='w-[479px] h-[139px] gap-5'>
-                    <div className='w-[479px] h-[103px] gap-5'>
-                        <h3 className='w-[479px] h-9 font-medium text-2xl'>Current Limits</h3>
-                        <div className='w-[363px] h-[56px] gap-[79px] flex items-center justify-between mt-3'>
-                            <div className='w-[142px] h-[56px] gap-[5px] flex flex-col'>
-                                <p className='w-[142px] h-[24px] font-normal text-lg text-gray-500'>Daily limit</p>
-                                <span className='w-[142px] h-[27px] text-[18px] font-medium'>20,000 UK</span>
-                            </div>
-
-                            <div className='w-[142px] h-[56px] gap-[5px] flex flex-col'>
-                                <p className='w-[142px] h-[24px] font-normal text-lg text-gray-500'>Yearly limit</p>
-                                <span className='w-[142px] h-[27px] text-[18px] font-medium'>1,000,000 UK</span>
-                            </div>
-                        </div>
-                        <h4 className='w-[479px] h-6 text-[15.2px] font-normal mt-5'>If you want higher limits. temporarily or permanently, <NavLink to={'/Limits'} className='text-red-600'>click here</NavLink></h4>
-                    </div>
-                </div>
-            </div>
+            <div className="relative max-w-[518px] w-full mx-auto mt-10 rounded-2xl py-6 px-5 bg-white shadow-2xl lg:ml-[14rem] ml-0">  
+    <div className="flex flex-col gap-6">  
+        <h2 className="font-medium text-[20px] text-center">Recent Transfers</h2>  
+        <div className="flex flex-col gap-6 mt-6">  
+            {/** Transfer Item Component */}  
+            {transfers.map((transfer, index) => (  
+                <NavLink to={'/ReviewPage'} key={index}>  
+                    <div className="flex items-center justify-between w-full h-12 py-3 px-5 bg-green-100 rounded-[15px] shadow-md transition-transform transform hover:scale-105">  
+                        <div className="flex items-center gap-3">  
+                            <img src={transfer.userImage} className="w-9 h-9 rounded-full" alt={transfer.userName} />  
+                            <p className="font-normal text-base truncate w-32">{transfer.userName}</p>  
+                            <div className="flex items-center gap-2">  
+                                <img src={Flag} className="w-5 h-5" alt="Currency Flag" />  
+                                <p className="font-normal text-base">{transfer.amount}</p>  
+                            </div>  
+                            <p className="font-normal text-base text-green-600">{transfer.status}</p>  
+                            <p className="text-red-600 cursor-pointer">View</p>  
+                        </div>  
+                    </div>  
+                </NavLink>  
+            ))}  
+        </div>  
+    </div>  
+</div>
 
 
-            <div className="flex justify-end absolute left-[800px] top-[130px] p-4">
-                <div className="bg-white rounded-lg shadow-xl p-6 w-[438px] h-[800px]">
+<div className='w-full max-w-[518px] h-auto absolute top-[712px] left-1/2 transform -translate-x-1/2 rounded-[15px] p-4 gap-3 bg-white shadow-2xl lg:mt-2 mt-28 -ml-7 md:ml-20 lg:ml-[-6.4rem]'>  
+    <div className='w-full h-auto gap-5'>  
+        <div className='w-full h-auto gap-5'>  
+            <h3 className='w-full h-auto font-medium text-2xl'>Current Limits</h3>  
+            <div className='w-full flex flex-col md:flex-row items-center justify-between mt-3'>  
+                <div className='flex flex-col w-full md:w-[142px] h-auto gap-[5px]'>  
+                    <p className='font-normal text-lg text-gray-500'>Daily limit</p>  
+                    <span className='text-[18px] font-medium'>20,000 UK</span>  
+                </div>  
+
+                <div className='flex flex-col w-full md:w-[142px] h-auto gap-[5px] mt-3 md:mt-0'>  
+                    <p className='font-normal text-lg text-gray-500'>Yearly limit</p>  
+                    <span className='text-[18px] font-medium'>1,000,000 UK</span>  
+                </div>  
+            </div>  
+            <h4 className='w-full h-auto text-[15.2px] font-normal mt-5'>  
+                If you want higher limits, temporarily or permanently,   
+                <NavLink to={'/AccountLimits'} className='text-red-600'> click here</NavLink>  
+            </h4>  
+        </div>  
+    </div>  
+</div>
+
+
+            <div className="flex absolute left-[790px] top-[130px] p-4">
+                <div className="bg-white rounded-lg shadow-xl p-6 w-[448px] h-[800px]">
                     <h2 className="w-[220px] h-11 absolute top-9 left-40 font-medium text-[23px]">Make a Transfer</h2>
                     <div className='w-[532px] h-[700px] absolute top-[120px] left-[31px] gap-[32px]'>
                         <div className="bg-gray-100 w-[410px] h-[80px] rounded-[10px] py-2 px-[24px] gap-[10px] mb-10">
@@ -253,7 +250,7 @@ const Home = () => {
                                             </div>
                                             <div className='w-[299px] h-[194px] gap-[22px] relative top-[90px] left-[53px]'>
                                                 <div className='w-[240px] h-[50px]'>
-                                                    <NavLink to={'/Layout'} onChange={handleInputChange}>
+                                                    <NavLink to={'/Dashboard'} onChange={handleInputChange}>
                                                         <div className='flex items-center justify-between flex-row mb-5'>
                                                             <img
                                                                 className='w-[50px] h-[50px] rounded-full'
