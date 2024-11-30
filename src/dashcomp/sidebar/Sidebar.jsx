@@ -21,7 +21,7 @@ const Sidebar = ({ isSidebarOpen }) => {
         ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
     >
       <div className="h-full py-5 overflow-y-auto">
-        <ul className="space-y-4">
+        <ul className="space-y-5 w-[260px]">
           <li
             className={`${activeLink === "home" ? "bg-red-500 text-white" : "text-black"
               } flex items-center p-2 cursor-pointer text-xl h-16`}
