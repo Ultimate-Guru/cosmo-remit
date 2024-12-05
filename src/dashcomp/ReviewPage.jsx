@@ -2,7 +2,7 @@
 import React, { useRef } from 'react';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
-import HomeArrow from '../../assets/img/Frame 257.png';
+import HomeArrow from '../assets/img/Frame 257.png';
 import { NavLink } from 'react-router-dom';
 
 const ReviewPage = () => {
@@ -52,7 +52,7 @@ const ReviewPage = () => {
 
   return (
     <div ref={contentRef}>
-      <NavLink to={"/Layout"}>
+      <NavLink to={"/Dashboard"}>
         <img src={HomeArrow} alt="Home Arrow" className="w-[150px] h-[40px] absolute top-[20px] left-[25px] cursor-pointer" />
       </NavLink>
 
@@ -85,7 +85,7 @@ const ReviewPage = () => {
 
         <div className="flex flex-col w-full max-w-[770px] h-[251px] mt-16">
           <h2 className="font-semibold text-[26px]">Receiver details</h2>
-          <div className="ml-[-40px] flex w-[800px] items-center justify-between">
+          <div className=" flex items-center justify-between">
             <div className="p-10 space-y-3 text-[20px] font-normal leading-[45px]">
               <p>Amount received</p>
               <p>Bank name</p>
@@ -99,7 +99,7 @@ const ReviewPage = () => {
           </div>
         </div>
 
-        <div className='w-[582px] h-[68px] gap-[64px] flex items-center justify-center mt-10 mb-10'>
+        <div className='h-[68px] gap-[64px] flex items-center justify-center mt-10 mb-10'>
           <button
             onClick={downloadPdf}
             className='w-[259px] h-[68px] rounded-[10px] gap-[10px] py-[16px] px-[50px] bg-gray-300 font-medium text-[24px] whitespace-nowrap'

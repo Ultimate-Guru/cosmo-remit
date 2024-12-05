@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useRef, useState } from 'react';
-import BackArrow from "../../assets/img/bx_arrow-back.png";
-import UpImg from "../../assets/img/document-upload.png";
+import BackArrow from "../assets/img/bx_arrow-back.png";
+import UpImg from "../assets/img/document-upload.png";
 import { useNavigate } from 'react-router-dom';
 
 const Resident = () => {

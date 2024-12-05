@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/HeroSection/Hero";
@@ -20,21 +20,17 @@ import Passport from "./pages/Passport";
 import Resident from "./pages/Resident";
 import Transact from "./pages/Transact";
 import Confirm from "./pages/Confirm";
-import Success from "./dashboard/accountlimits/Success";
-import Review from "./dashboard/accountlimits/Review";
-import Funds from "./dashboard/accountlimits/Funds";
-import Residence from "./dashboard/accountlimits/Residence";
-import Limits from "./dashboard/accountlimits/Limits";
-import Layout from "./dashboard/shared/Layout";
-import Home from '../src/dashboard/home/Home'
-import Transactions from '../src/dashboard/transactionHistory/Transactions';
-import Beneficiary from "./dashboard/beneficiaryList/Beneficiary";
-import AddBeneficiary from "./dashboard/beneficiaryList/AddBeneficiary";
-import Profile from "./dashboard/profile/Profile";
-import Notice from "./dashboard/home/Notice";
-import Successful from "./dashboard/home/Successful";
-import Receiver from './dashboard/home/Receiver'
-import ReviewPage from "./dashboard/home/ReviewPage";
+import Success from "./dashcomp/Success";
+import Review from "./dashcomp/Review";
+import Funds from './dashcomp/Funds'
+import Residence from "./dashcomp/Residence";
+import Beneficiary from "./dashcomp/Beneficiary";
+import AddBeneficiary from "./dashcomp/AddBeneficiary";
+import Profile from "./dashcomp/Profile";
+import Notice from "./dashcomp/Notice";
+import Successful from "./dashcomp/Successful";
+import Receiver from './dashcomp/Receiver'
+import ReviewPage from "./dashcomp/ReviewPage";
 import Dashboard from "./dashcomp/layout/Dashboard";
 
 const App = () => {
@@ -42,8 +38,8 @@ const App = () => {
     <div>
       <Routes>
         {/* Landing Page Route */}
-        <Route 
-          path="/" 
+        <Route
+          path="/"
           element={
             <>
               <Navbar />
@@ -58,7 +54,7 @@ const App = () => {
               <Apps />
               <Footer />
             </>
-          } 
+          }
         />
 
         {/* Authentication and other routes */}
@@ -72,29 +68,22 @@ const App = () => {
         <Route path="/Confirm" element={<Confirm />} />
 
         {/* Dashboard-related Routes */}
-        <Route path="/Dashboard" element={<Dashboard /> }/>
+        <Route path="/Dashboard" element={<Dashboard />} />
 
-        {/* <Route path="/Layout" element={<Layout />}/>
-
-        <Route path="/Home" element={<Home />}/>
-        <Route path="/Receiver" element={<Receiver />}/>
+        <Route path="/Receiver" element={<Receiver />} />
         <Route path="/Notice" element={<Notice />} />
         <Route path="/Successful" element={<Successful />} />
         <Route path="ReviewPage" element={<ReviewPage />} />
 
-        <Route path="/Transactions" element={<Transactions/>}/>   
+        <Route path="/Beneficiary" element={<Beneficiary />} />
+        <Route path="/AddBeneficiary" element={<AddBeneficiary />} />
 
-        <Route path="/Beneficiary" element={<Beneficiary />}/>
-        <Route path="/AddBeneficiary" element={<AddBeneficiary />}/>
+        <Route path="/Profile" element={<Profile />} />
 
-        <Route path="/Profile" element={<Profile />}/>
-
-        
-        <Route path="/Limits" element={<Limits />} />
         <Route path="/Residence" element={<Residence />} />
         <Route path="/Funds" element={<Funds />} />
         <Route path="/Review" element={<Review />} />
-        <Route path="/Success" element={<Success />} /> */}
+        <Route path="/Success" element={<Success />} />
 
       </Routes>
     </div>

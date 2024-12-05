@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { NavLink } from "react-router-dom";
-import bgCoverImg from "../../assets/img/fast.png";
+// import bgCoverImg from "../../assets/img/fast.png";
 import Svg from "../../assets/img/Vector.svg";
 import Vector from "../../assets/img/faster.png";
 

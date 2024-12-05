@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import SuccessImg from "../../assets/img/succes-mark.png";
+import SuccessImg from "../assets/img/succes-mark.png";
 import { NavLink } from "react-router-dom";
 
 function Success() {
@@ -20,7 +20,7 @@ function Success() {
       </p>
 
       {/* Done button */}
-      <NavLink to={'/Layout'}>
+      <NavLink to={'/Dashboard'}>
         <button className="bg-red-600 text-white font-bold rounded-md w-52 py-3 px-16 mt-12">
           Done
         </button>
