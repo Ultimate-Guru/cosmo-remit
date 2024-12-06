@@ -1,14 +1,19 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Country from '../../assets/img/Frame 24.png';
+import CountrySmallScreen from '../../assets/img/Frame 524.png';
 
 const Countries = () => {
   return (
-    <div className="w-full">
+    <div>
       <img 
         src={Country} 
         alt="Countries" 
-        className="w-full h-auto object-cover"
+        className="hidden md:flex w-full"
+      />
+      <img src={CountrySmallScreen} 
+      alt="Countries"
+      className="md:hidden w-full"
       />
     </div>
   );
