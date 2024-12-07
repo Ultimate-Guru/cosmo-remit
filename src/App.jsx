@@ -32,6 +32,7 @@ import Successful from "./dashcomp/Successful";
 import Receiver from './dashcomp/Receiver'
 import ReviewPage from "./dashcomp/ReviewPage";
 import Dashboard from "./dashcomp/layout/Dashboard";
+import Error from "./pages/Error";
 
 const App = () => {
   return (
@@ -66,6 +67,7 @@ const App = () => {
         <Route path="/Resident" element={<Resident />} />
         <Route path="/Transact" element={<Transact />} />
         <Route path="/Confirm" element={<Confirm />} />
+        <Route path="/Error" element={<Error />} />
 
         {/* Dashboard-related Routes */}
         <Route path="/Dashboard" element={<Dashboard />} />
