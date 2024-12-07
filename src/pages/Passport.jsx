@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useRef } from 'react';
 import Upload from '../assets/img/Upload.png';
-import Circle from '../assets/img/black-Circle.png';
+import Circle from '../assets/img/black-circle.png';
 import { useNavigate } from 'react-router-dom';
 
 const Passport = () => {
