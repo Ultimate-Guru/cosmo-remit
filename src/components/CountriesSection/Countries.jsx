@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Country from '../../assets/img/Frame 24.png';
 import { motion } from 'framer-motion'
 
@@ -13,7 +13,11 @@ const Countries = () => {
       <img 
         src={Country} 
         alt="Countries" 
-        className="w-full h-auto object-cover"
+        className="hidden md:flex w-full"
+      />
+      <img src={Country} 
+      alt="Countries"
+      className="md:hidden w-full"
       />
     </motion.div>
   );
