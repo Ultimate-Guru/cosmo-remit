@@ -56,9 +56,9 @@ const Fastest = () => {
                     viewport={{ once: false, amount: 0.5 }}
                 >
                     <NavLink to="/SignUp">
-                        <button className="flex items-center justify-center gap-[6px] text-white bg-red-600 p-3 rounded-lg font-semibold text-[12px] lg:text-2xl leading-7 mt-4 lg:mt-6 py-[4px] px-[22px] lg:py-4 lg:px-14">
+                        <button className="group flex items-center justify-center gap-[6px] text-white bg-red-600 p-3 rounded-lg font-semibold text-[12px] lg:text-2xl leading-7 mt-4 lg:mt-6 py-[4px] px-[22px] lg:py-4 lg:px-14 hover:bg-red-700 transition-all duration-300">
                             Register
-                            <img src={Svg} className="w-[13px] lg:w-7" alt="Arrow icon" />
+                            <img src={Svg} className="w-[13px] lg:w-7 transform transition-transform duration-300 group-hover:translate-x-3" alt="Arrow icon" />
                         </button>
                     </NavLink>
                 </motion.div>

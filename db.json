@@ -29,6 +29,16 @@
       "Password": "adeesther",
       "ConfirmPassword": "adeesther",
       "Country": "Nigeria"
+    },
+    {
+      "id": "f76c",
+      "FirstName": "Ugo",
+      "LastName": "Man",
+      "Email": "ugoman@yahoo.com",
+      "PhoneNumber": "237654587333",
+      "Password": "ugo",
+      "ConfirmPassword": "ugo",
+      "Country": "Australia"
     }
   ],
   "transactions": [

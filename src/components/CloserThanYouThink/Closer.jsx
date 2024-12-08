@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion";
 import BgImg from '../../assets/img/Rectangle 14.png';
 import Svg from '../../assets/img/Vector.svg';
 
@@ -56,12 +56,17 @@ function Closer() {
                 >
                     <NavLink to={'/SignUp'} className="text">
                         <button
-                            className="flex items-center justify-around gap-3 text-white bg-red-600 p-2 rounded-lg font-semibold text-base md:text-xl lg:text-2xl leading-7 py-2 md:py-3 px-10 md:px-16 lg:px-24"
+                            className="group flex items-center justify-around gap-3 text-white bg-red-600 p-2 rounded-lg font-semibold text-base md:text-xl lg:text-2xl leading-7 py-2 md:py-3 px-10 md:px-16 lg:px-24 hover:bg-red-700 transition-all duration-300"
                         >
                             Register
-                            <img src={Svg} className="w-5 md:w-6 lg:w-7" alt="Arrow Icon" />
+                            <img
+                                src={Svg}
+                                className="w-5 md:w-6 lg:w-7 transform transition-transform duration-300 group-hover:translate-x-3"
+                                alt="Arrow Icon"
+                            />
                         </button>
                     </NavLink>
+
                 </motion.div>
             </div>
         </div>

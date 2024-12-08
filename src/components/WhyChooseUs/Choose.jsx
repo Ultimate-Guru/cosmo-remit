@@ -18,7 +18,7 @@ function Choose() {
                 viewport={{ once: false }}
                 className="text-2xl sm:text-4xl leading-normal text-center mt-20 font-semibold"
             >
-                Why Choose Frica XChange
+                Why Choose FricaXChange
             </motion.h1>
 
             {/* Large screen image with animation */}

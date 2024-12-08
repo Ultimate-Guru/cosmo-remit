@@ -46,13 +46,13 @@ const Navbar = () => {
                 viewport={{ once: true, amount: 0.5 }}
                 className="hidden md:flex">
                 <NavLink
-                    className="mr-10 w-36 text-center bg-white text-red-600 p-2 rounded-lg font-semibold"
+                    className="mr-10 w-36 text-center bg-white hover:bg-gray-100  text-red-600 p-2 rounded-lg font-semibold"
                     to={'./SignIn'}
                 >
                     Login
                 </NavLink>
                 <NavLink
-                    className="text-white text-center w-36 mr-10 bg-red-600 font-semibold p-2 rounded-lg"
+                    className="text-white text-center w-36 mr-10 bg-red-600 hover:bg-red-700 font-semibold p-2 rounded-lg"
                     to={'./SignUp'}
                 >
                     Register
