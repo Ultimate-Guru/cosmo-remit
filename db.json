@@ -11,16 +11,6 @@
       "Country": "USA"
     },
     {
-      "id": "4948",
-      "FirstName": "Emeka",
-      "LastName": "Nwadinigwe",
-      "Email": "emekanwadinigwe1@gmail.com",
-      "PhoneNumber": "09038337030",
-      "Password": "Nwadinigwe",
-      "ConfirmPassword": "Nwadinigwe",
-      "Country": "Nigeria"
-    },
-    {
       "id": "46f7",
       "FirstName": "Duke",
       "LastName": "Akhere",
@@ -29,6 +19,16 @@
       "Password": "duke",
       "ConfirmPassword": "duke",
       "Country": "Washington DC"
+    },
+    {
+      "id": "ffab",
+      "FirstName": "Adeniji",
+      "LastName": "Esther",
+      "Email": "adeesther@gmail.com",
+      "PhoneNumber": "08094289816",
+      "Password": "adeesther",
+      "ConfirmPassword": "adeesther",
+      "Country": "Nigeria"
     }
   ],
   "transactions": [
@@ -101,6 +101,6 @@
       "Channel": "Bank Transfer",
       "Recipient": "John Doe",
       "Status": "Pending"
-    }    
+    }
   ]
 }

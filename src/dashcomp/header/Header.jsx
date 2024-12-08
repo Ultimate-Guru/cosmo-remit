@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import PImg from '../../assets/img/brock-wegner.png';
 import Drop from '../../assets/img/iconamoon_arrow-up-2-duotone.png';
 import Bell from '../../assets/img/Group 28.png';
@@ -13,21 +13,6 @@ const Header = ({ toggleSidebar }) => {
   const toggleDropdown = () => {
     setIsDropdownOpen(prev => !prev);
   };
-
-  // Function to handle clicks outside the dropdown  
-  const handleClickOutside = (event) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      setIsDropdownOpen(false);
-    }
-  };
-
-  // Use useEffect to add/remove event listener for clicks outside  
-  useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
 
   return (
     <nav className="fixed top-0 z-50 w-full bg-white border-gray-200 flex justify-between">
@@ -53,7 +38,9 @@ const Header = ({ toggleSidebar }) => {
               src={Drop}
               alt="Dropdown"
               onClick={toggleDropdown}
-              className="cursor-pointer"
+              className={`cursor-pointer transition-transform duration-300 ${
+                isDropdownOpen ? 'rotate-180' : 'rotate-0'
+              }`}
             />
             <img src={Bell} alt="Bell Img" />
 

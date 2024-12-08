@@ -7,13 +7,21 @@ import { useNavigate } from 'react-router-dom';
 
 const Upload = () => {
   const [selectedFile, setSelectedFile] = useState(null);
+  const [error, setError] = useState(''); // State to manage errors
   const navigate = useNavigate();
 
   // Handle file selection
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      setSelectedFile(file);
+      // Check if file size exceeds 25MB
+      if (file.size > 25 * 1024 * 1024) {
+        setError('File size exceeds the maximum limit of 25MB.');
+        setSelectedFile(null); // Clear the selected file
+      } else {
+        setSelectedFile(file);
+        setError(''); // Clear any previous errors
+      }
     }
   };
 
@@ -22,7 +30,14 @@ const Upload = () => {
     event.preventDefault();
     const file = event.dataTransfer.files[0];
     if (file) {
-      setSelectedFile(file);
+      // Check if file size exceeds 25MB
+      if (file.size > 25 * 1024 * 1024) {
+        setError('File size exceeds the maximum limit of 25MB.');
+        setSelectedFile(null); // Clear the selected file
+      } else {
+        setSelectedFile(file);
+        setError(''); // Clear any previous errors
+      }
     }
   };
 
@@ -31,9 +46,14 @@ const Upload = () => {
     event.preventDefault();
   };
 
+  // Handle navigation and submission error
   const handleNextPage = () => {
-    navigate('/Transact');
-  }
+    if (!selectedFile) {
+      setError('Please upload a file before proceeding.');
+    } else {
+      navigate('/Transact');
+    }
+  };
 
   return (
     <div className='flex flex-col items-center justify-center gap-5 py-5 bg-white px-4'>
@@ -64,11 +84,20 @@ const Upload = () => {
           {selectedFile && (
             <p className="mt-2 text-green-600">Selected file: {selectedFile.name}</p>
           )}
+          {error && (
+            <p className="mt-2 text-red-600">{error}</p>
+          )}
         </div>
-        <button type="submit" className="bg-red-600 text-white font-semibold rounded py-3 w-full max-w-sm md:max-w-md mt-4" onClick={handleNextPage}>Next</button>
+        <button
+          type="submit"
+          className="bg-red-600 text-white font-semibold rounded py-3 w-full max-w-sm md:max-w-md mt-4"
+          onClick={handleNextPage}
+        >
+          Next
+        </button>
       </div>
     </div>
   );
-}
+};
 
 export default Upload;

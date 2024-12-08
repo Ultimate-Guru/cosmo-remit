@@ -12,9 +12,8 @@ const SignIn = () => {
     Password: ''
   });
 
-  const [error, setError] = useState(''); // Single error message
-  const [isPasswordVisible, setIsPasswordVisible] = useState(false); // Password visibility state
-  const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] = useState(false); // Confirm password visibility state
+  const [error, setError] = useState('');
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   // Validation logic
   const validate = () => {
@@ -34,7 +33,6 @@ const SignIn = () => {
 
     const validationErrors = validate();
 
-    // Check if there are validation errors (empty fields)
     if (Object.keys(validationErrors).length > 0) {
       setError('Wrong credentials');
       return;
@@ -48,15 +46,13 @@ const SignIn = () => {
 
       if (user && user.Password === formData.Password) {
         alert('Login Successfully');
-        navigate('/');
-        // Reset form after successful login
         setFormData({
           Email: '',
           Password: ''
         });
-        setError(''); // Clear the error message
+        setError('');
+        navigate('/Dashboard'); // Navigate after successful login
       } else {
-        // Show "Wrong credentials" error if email or password is incorrect
         setError('Wrong credentials');
       }
     } catch (err) {
@@ -74,14 +70,9 @@ const SignIn = () => {
     }));
   };
 
-
   // Toggle password visibility
   const togglePasswordVisibility = () => {
     setIsPasswordVisible(!isPasswordVisible);
-  };
-
-  const toggleConfirmPasswordVisibility = () => {
-    setIsConfirmPasswordVisible(!isConfirmPasswordVisible);
   };
 
   return (
@@ -94,7 +85,6 @@ const SignIn = () => {
         </p>
 
         <form className="w-full max-w-sm mt-4" onSubmit={handleSubmit}>
-
           {/* Display a generic error message when credentials are wrong */}
           {error && (
             <p className="text-red-500 text-sm font-medium mb-4">{error}</p>
@@ -130,16 +120,14 @@ const SignIn = () => {
             />
           </div>
 
-          <NavLink to={'/Dashboard'}>
-            <button
-              type="submit"
-              className="mt-6 bg-red-600 text-white p-2 rounded w-full hover:bg-red-700">
-              Sign in
-            </button>
-          </NavLink>
+          <button
+            type="submit"
+            className="mt-6 bg-red-600 text-white p-2 rounded w-full hover:bg-red-700">
+            Sign in
+          </button>
 
           <p className="text-center m-5">
-            <NavLink to={'/ForgotPassword'} className="mt-4 text-muted-foreground">Forgot password?</NavLink>
+            <NavLink to={'/Error'} className="mt-4 text-muted-foreground">Forgot password?</NavLink>
           </p>
         </form>
       </div>
