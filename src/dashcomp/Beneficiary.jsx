@@ -12,6 +12,8 @@ const Beneficiary = () => {
     { id: 4, name: "Bob Johnson", country: "CAN - Dollar" },
   ]);
 
+  const [searchTerm, setSearchTerm] = useState("");
+
   // Handle delete action
   const handleDelete = (id) => {
     const updatedBeneficiaries = beneficiaries.filter(
@@ -25,6 +27,11 @@ const Beneficiary = () => {
     navigate("/ReviewPage");
   };
 
+  // Search functionality
+  const filterBeneficiaries = beneficiaries.filter((beneficiary) => (
+    beneficiary.name.toLowerCase().includes(searchTerm.toLowerCase())
+  ));
+
   return (
     <div className="md:p-8 lg:ml-64 lg:mt-10 mt-24">
       {/* Header Section */}
@@ -36,7 +43,8 @@ const Beneficiary = () => {
             <input
               type="text"
               placeholder="Search"
-              className="w-full md:w-[400px] h-10 md:h-12 bg-gray-300 rounded-full pl-4 pr-10 placeholder:text-gray-500 focus:ring-2 focus:ring-red-600"
+              onChange={(e) => setSearchTerm(e.target.value)} // update search term
+              className="w-full md:w-[400px] h-10 md:h-12 bg-gray-300 rounded-full pl-4 pr-10 placeholder:text-gray-500"
             />
             <img
               src={Search}
@@ -68,36 +76,37 @@ const Beneficiary = () => {
 
         {/* Beneficiary Rows */}
         <div className="space-y-4">
-          {beneficiaries.map((beneficiary) => (
-            <div
-              key={beneficiary.id}
-              className="bg-gray-100 rounded-lg p-4 flex justify-between items-center"
-            >
-              {/* Beneficiary Details */}
-              <div>
-                <h1 className="text-black lg:text-lg text-base md:text-lg font-medium">
-                  {beneficiary.name}
-                </h1>
-              </div>
+        {filterBeneficiaries.length > 0 ? (
+            filterBeneficiaries.map((beneficiary) => (
+              <div
+                key={beneficiary.id}
+                className="bg-gray-100 rounded-lg p-4 flex justify-between items-center"
+              >
+                {/* Beneficiary Details */}
+                <div>
+                  <h1 className="text-black lg:text-lg text-base md:text-lg font-medium">
+                    {beneficiary.name}
+                  </h1>
+                </div>
                 <p className="text-base lg:text-lg md:text-lg mr-7">{beneficiary.country}</p>
 
-              {/* Action Buttons */}
-              <div className="flex gap-10">
-                <button
-                  className="font-medium"
-                  onClick={Page}
-                >
-                  View
-                </button>
-                <button
-                  className="text-red-600 font-medium"
-                  onClick={() => handleDelete(beneficiary.id)}
-                >
-                  Delete
-                </button>
+                {/* Action Buttons */}
+                <div className="flex gap-10">
+                  <button className="font-medium" onClick={Page}>
+                    View
+                  </button>
+                  <button
+                    className="text-red-600 font-medium"
+                    onClick={() => handleDelete(beneficiary.id)}
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            <p className="text-gray-500 text-center">No beneficiaries found</p>
+          )}
         </div>
       </div>
     </div>

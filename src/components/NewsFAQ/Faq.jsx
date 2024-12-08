@@ -1,14 +1,15 @@
-// eslint-disable-next-line no-unused-vars  
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import { MdKeyboardArrowDown } from 'react-icons/md';
-import Coin from '../../assets/img/coin.png.png'
+import Coin from '../../assets/img/coin.png.png';
+import { motion } from 'framer-motion';
 
 const Faq = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
   const faq = [
     {
-      question: 'How do I create an account',
+      question: 'How do I create an account?',
       answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eros tortor, consectetur eget libero non, condimentum.'
     },
     {
@@ -37,7 +38,6 @@ const Faq = () => {
 
         {/* Card */}
         <div className='w-64 h-[410px] ml-auto p-2 bg-white rounded-xl transform transition-all hover:translate-y-2 duration-300 shadow-lg hover:shadow-2xl'>
-
           {/* Image */}
           <img
             src={Coin}
@@ -54,11 +54,9 @@ const Faq = () => {
               Lorem ipsum dolor sit amet,  consectetur adipiscing elit. Vivamus eros tortor,
             </p>
           </div>
-
         </div>
 
         <div className='w-64 h-[410px] mr-auto p-2 bg-white rounded-xl transform transition-all hover:translate-y-2 duration-300 shadow-lg hover:shadow-2xl'>
-
           {/* Image */}
           <img
             src={Coin}
@@ -75,27 +73,42 @@ const Faq = () => {
               Lorem ipsum dolor sit amet,  consectetur adipiscing elit. Vivamus eros tortor,
             </p>
           </div>
-
         </div>
 
+        {/* FAQ Section with animations */}
         <div className="space-y-4 mx-auto mt-10">
           {faq.map((item, index) => (
-            <div key={index}>
-              <button
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 * index, duration: 0.5 }}
+            >
+              <motion.button
                 onClick={() => handleToggle(index)}
                 className="flex items-center justify-between w-full py-2 px-5 rounded-lg hover:bg-gray-100"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.1 * index, duration: 0.3 }}
               >
                 <span className='font-medium text-[19px] whitespace-nowrap'>{item.question}</span>
                 <MdKeyboardArrowDown
                   className={`text-2xl ml-5 transform transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}
                 />
-              </button>
+              </motion.button>
+
+              {/* Animated answer with smooth sliding and fading effect */}
               {openIndex === index && (
-                <p className="mt-2 text-[14px] w-96 mx-auto">
+                <motion.p
+                  className="mt-2 text-[14px] w-96 mx-auto"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  transition={{ duration: 0.4 }}
+                >
                   {item.answer}
-                </p>
+                </motion.p>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

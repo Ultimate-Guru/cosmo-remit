@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import HomeArrow from '../assets/img/Frame 257.png';
@@ -7,6 +7,33 @@ import { NavLink } from 'react-router-dom';
 
 const ReviewPage = () => {
   const contentRef = useRef();
+  const [currentDate, setCurrentDate] = useState('');
+
+    useEffect(
+        () => {
+            const today = new Date();
+            setCurrentDate(formatDate(today))
+        }, []
+    );
+
+    const formatDate = (date) => {
+      const day = date.getDate();
+      const month = date.toLocaleString('default', { month: 'long' });
+      const year = date.getFullYear();
+
+      // Function to get day suffix (e.g., "st", "nd", "rd", "th")
+      const getDaySuffix = (day) => {
+          if (day > 3 && day < 21) return 'th'; // Covers 11th, 12th, 13th
+          switch (day % 10) {
+              case 1: return 'st';
+              case 2: return 'nd';
+              case 3: return 'rd';
+              default: return 'th';
+          }
+      };
+
+      return `${day}${getDaySuffix(day)} ${month}, ${year}`;
+  };
 
   // Function to download the content as PDF
   const downloadPdf = async () => {
@@ -74,10 +101,10 @@ const ReviewPage = () => {
           <div className="p-3 space-y-3 text-[20px] font-normal leading-[45px] flex items-end justify-center flex-col">
             <p>89578833456593334</p>
             <p className="bg-green-500 text-white w-[113px] h-[36px] rounded-[31px] gap-[10px] flex items-center justify-center py-1 px-[15px]">Success</p>
-            <p>24th August, 2024</p>
+            <p>{currentDate}</p>
             <p>Musa Ibrahim</p>
             <p>500 UK</p>
-            <p>24th August, 2024. 9:00am</p>
+            <p>{currentDate}</p>
             <p>0</p>
             <p>Bank transfer</p>
           </div>
@@ -94,7 +121,7 @@ const ReviewPage = () => {
             <div className="p-10 space-y-3 text-[20px] font-normal leading-[45px] flex items-end justify-center flex-col">
               <p>NGN 850,000</p>
               <p>United Bank For Africa</p>
-              <p>2345236xxx</p>
+              <p>{'2345236xxx'}</p>
             </div>
           </div>
         </div>

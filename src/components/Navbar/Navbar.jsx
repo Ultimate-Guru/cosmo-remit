@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AiOutlineClose } from 'react-icons/ai';
 import Dots from '../../assets/img/dots.png';
+import { motion } from 'framer-motion'
 
 const Navbar = () => {
     // State to manage the navbar's visibility
@@ -21,10 +22,29 @@ const Navbar = () => {
     return (
         <div style={BgColor} className="flex justify-between items-center p-3 sticky top-0 z-[20]">
             {/* Logo */}
-            <h2 className="text-white font-bold text-4xl ml-11">Logo</h2>
+            <motion.h2
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{
+                    opacity: 1,
+                    x: 0,
+                    transition: { delay: 0.2, duration: 0.5, ease: 'easeInOut'},
+                }}
+                viewport={{ once: true, amount: 0.5 }}
+                className="text-white font-bold text-4xl ml-11"
+            >
+                Logo
+            </motion.h2>
 
             {/* Desktop Navigation Buttons */}
-            <div className="hidden md:flex">
+            <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{
+                    opacity: 1,
+                    x: 0,
+                    transition: { delay: 0.2, duration: 0.5, ease: 'easeInOut'},
+                }}
+                viewport={{ once: true, amount: 0.5 }}
+                className="hidden md:flex">
                 <NavLink
                     className="mr-10 w-36 text-center bg-white text-red-600 p-2 rounded-lg font-semibold"
                     to={'./SignIn'}
@@ -37,11 +57,19 @@ const Navbar = () => {
                 >
                     Register
                 </NavLink>
-            </div>
+            </motion.div>
 
             {/* Mobile Navigation Icon */}
             <div onClick={handleNav} className="cursor-pointer md:hidden">
-                <img src={Dots} className="h-8 mr-4" alt="Menu icon" />
+                <motion.img
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{
+                    opacity: 1,
+                    x: 0,
+                    transition: { delay: 0.2, duration: 0.5, ease: 'easeInOut'},
+                }}
+                viewport={{ once: true, amount: 0.5 }}
+                 src={Dots} className="h-8 mr-4" alt="Menu icon" />
             </div>
 
             {/* Mobile Navigation Menu */}
@@ -64,20 +92,20 @@ const Navbar = () => {
                         Help center
                     </NavLink>
                     <div>
-                    <div className="flex space-x-7 mt-10">
-                        <NavLink
-                            className="text-center text-red-600 border border-gray-400 px-4 py-2 rounded-xl font-semibold w-full"
-                            to={'/SignIn'}
-                        >
-                            Login
-                        </NavLink>
-                        <NavLink
-                            className="text-white text-center bg-red-600 px-4 py-2 rounded-xl font-semibold w-full"
-                            to={'/SignUp'}
-                        >
-                            Sign up
-                        </NavLink>
-                    </div>
+                        <div className="flex space-x-7 mt-10">
+                            <NavLink
+                                className="text-center text-red-600 border border-gray-400 px-4 py-2 rounded-xl font-semibold w-full"
+                                to={'/SignIn'}
+                            >
+                                Login
+                            </NavLink>
+                            <NavLink
+                                className="text-white text-center bg-red-600 px-4 py-2 rounded-xl font-semibold w-full"
+                                to={'/SignUp'}
+                            >
+                                Sign up
+                            </NavLink>
+                        </div>
                     </div>
                 </div>
             </ul>

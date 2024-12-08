@@ -1,16 +1,21 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Country from '../../assets/img/Frame 24.png';
+import { motion } from 'framer-motion'
 
 const Countries = () => {
   return (
-    <div className="w-full">
+    <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0, transition: { delay: 0.4, duration: 0.7 } }}
+    viewport={{ once: false, amount: .5 }}
+     className="w-full">
       <img 
         src={Country} 
         alt="Countries" 
         className="w-full h-auto object-cover"
       />
-    </div>
+    </motion.div>
   );
 };
 
