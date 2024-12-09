@@ -39,6 +39,16 @@
       "Password": "ugo",
       "ConfirmPassword": "ugo",
       "Country": "Australia"
+    },
+    {
+      "id": "d9b9",
+      "FirstName": "desmond",
+      "LastName": "chijioke",
+      "Email": "chijiokedesmond9@gmail.com",
+      "PhoneNumber": "07066530073",
+      "Password": "Dezmonda17.",
+      "ConfirmPassword": "Dezmonda17.",
+      "Country": "Nigeria"
     }
   ],
   "transactions": [
