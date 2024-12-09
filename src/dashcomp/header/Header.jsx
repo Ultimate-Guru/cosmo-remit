@@ -38,9 +38,8 @@ const Header = ({ toggleSidebar }) => {
               src={Drop}
               alt="Dropdown"
               onClick={toggleDropdown}
-              className={`cursor-pointer transition-transform duration-300 ${
-                isDropdownOpen ? 'rotate-180' : 'rotate-0'
-              }`}
+              className={`cursor-pointer transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : 'rotate-0'
+                }`}
             />
             <img src={Bell} alt="Bell Img" />
 
@@ -52,8 +51,9 @@ const Header = ({ toggleSidebar }) => {
               >
                 <ul className="py-2">
                   <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Profile</li>
-                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Settings</li>
-                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Logout</li>
+                  <NavLink to={'/SignIn'}>
+                    <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Logout</li>
+                  </NavLink>
                 </ul>
               </div>
             )}
