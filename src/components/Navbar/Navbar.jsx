@@ -30,7 +30,7 @@ const Navbar = () => {
                     transition: { delay: 0.2, duration: 0.5, ease: 'easeInOut'},
                 }}
                 viewport={{ once: true, amount: 0.5 }}
-                className="text-white font-bold text-4xl ml-11"
+                className="text-white font-bold text-4xl ml-11 cursor-default"
             >
                 Logo
             </motion.h2>
